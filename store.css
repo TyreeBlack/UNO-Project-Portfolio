@@ -1,0 +1,141 @@
+body {
+    background-color: wheat;
+}
+
+.uno_container {
+    background-color: lightblue;
+    width: 420px;
+    height: 350px;
+    border-radius: 12px;
+}
+.btn-submit {
+    background:linear-gradient(yellow, gold, gold);
+    border-radius: 32px;
+    border: 2px solid white;
+    padding: 20px;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    width: 220px;
+    position: relative;
+    bottom: -150px;
+
+}
+
+.paymentWall {
+    background-color: gold;
+    width: 750px;
+    height: 750px;
+    border-radius: 22px;
+    border: 2px solid white;
+}
+
+.credit_handler {
+    font-size: 23px;
+    text-align: center;
+    position: relative;
+    right: -140px;
+    bottom: -30px;
+}
+
+.full_name_field {
+    background-color: white;
+    width: 270px;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    position: relative;
+    left: -60px;
+    bottom: -100px;
+}
+
+
+.email_header {
+    font-size: 23px;
+    position: relative;
+    left: -450px;
+    bottom: -180px;
+}
+
+.email_field {
+    background-color: white;
+    width: 270px;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    position: relative;
+    right: -70px;
+    bottom: -170px;
+}
+
+.billing_header {
+    font-size: 23px;
+    position: relative;
+    right: -100px;
+    bottom: -120px;
+}
+
+.billing_address_field {
+    background-color: white;
+    width: 320px;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    position: relative;
+    left: -65px;
+    bottom: -170px;
+}
+
+.credit_card_header {
+    font-size: 23px;
+    position: relative;
+    bottom: -190px;
+}
+
+.credit_card_field {
+    background-color: white;
+    width: 320px;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    position: relative;
+    left: -220px;
+    bottom: -250px;
+}
+
+.credit_card_option {
+    background-color: white;
+    width: 110px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 3px solid red;
+    position: relative;
+    bottom: -250px;
+    left: -480px;
+    z-index: 1;
+}
+
+.zipCode_field {
+    background-color: white;
+    width: 220px;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    position: relative;
+    right: -265px;
+    bottom: -170px;
+}
+
+.submit_payment {
+    background:linear-gradient(red, darkred, red);
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    border-radius: 22px;
+    width: 280px;
+    padding: 30px;
+    position: relative;
+    left: -110px;
+    bottom: -420px;
+    cursor: pointer;
+}

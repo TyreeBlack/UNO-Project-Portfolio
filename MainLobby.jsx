@@ -28,26 +28,23 @@ import {faHouse,
 
 import './MainLobby.css'
 import MainGame from "./MainGame";
+import UNOStore from "./UNOStore";
+import UserInitialIcon from "./UserInitialIcon";
+
+import {BrowserRouter, Routes, Route, NavLink} from "react-router-dom";
 
 // declares a prop and fetches for objects
 function MainLobby({username, socket, friends}) {
 
-function UserInitialIcon({username, className="username_icon"}) {
-  const initial = username ? username[0].toUpperCase() : '?';
-
-  return (
-    <div className={`username_icon ${className}`}>
-    <h6 className="username_initial">{initial}</h6>
-    </div>
-  );
-}
-
+const [initialGameState, setInitialGameState] = useState(null);
 const [onscreen, setScreen] = useState("sidebar_menu");
 const [activePanel, setActivePanel] = useState(null);
 const [FriendsPanel, setFriendsPanel] = useState(null);
 const [MinimizeFriendPanel, setMinimizeFriendPanel] = useState(false);
 
 const [MinimizeServerPanel, setMinimizeServerPanel] = useState(false);
+
+const [UnoStore, setUnoStore] = useState(null);
 
 const [PartyRoom, setPartyRoom] = useState(null);
 const [MinimizedPartyUI, setMinimizedParty] = useState(false);
@@ -56,6 +53,8 @@ const [MinimizedInviteUI, setMinimizeInviteUI] = useState(false);
 const[InviteBubble, setInviteBubble] = useState(null);
 const[PartyRequestSent, setPartyRequestSent] = useState(null);
 const[ReceivedPartyRequest, setReceivedPartyRequest] = useState(null);
+const[ClearPartyRequest, setClearPartyRequest] = useState(false);
+
 const[AcceptPartyRequest, setAcceptPartyRequest] = useState(null);
 const [PartySlotPanel, setPartySlotPanel] = useState(false);
 
@@ -79,8 +78,17 @@ const[FriendStatus, setFriendStatus] = useState(null);
 const[SettingUI, setSettingUI] = useState(null);
 const[MinimizeSettingUI, setMinimizeSettingUI] = useState(false);
 
-const[StartGame, setStartGame] = useState(null);
+const[StartGame, setStartGame] = useState(false);
+const[maxPlayer, setmaxPlayer] = useState(false);
 
+
+console.log("Current UnoParty: ", unoparty);
+console.log("Curremt RoomCode: ", unoparty?.roomCode);
+
+
+useEffect(() => {
+  console.log("UnoParty Changed State: ", unoparty);
+}, [unoparty]);
 
 function LogOut() {
 
@@ -179,7 +187,11 @@ function PartyRequestInvitation(friend) {
 function HandleAcceptPartyRequest() {
   socket.emit("accepting_party_requests", ReceivedPartyRequest.roomCode, (accept_invite_request) => {
     console.log(accept_invite_request);
-    setUnoParty(accept_invite_request);
+    console.log("Whats this object: ", accept_invite_request);
+    console.log("Accept Callback: ", accept_invite_request);
+    console.log("Room Code From Invite: ", ReceivedPartyRequest.roomCode);
+
+    console.log("Setting Accept Invite Object: ", accept_invite_request);
     setActivePanel("party");
   });
 }
@@ -187,10 +199,42 @@ function HandleAcceptPartyRequest() {
 useEffect(() => {
   socket.on("accepting_party_request", (UpdatedParty) => {
     console.log("Party Room Updated: ", UpdatedParty);
-    setUnoParty({
+    console.log("Updated Party: ", UpdatedParty);
+    setUnoParty(prev => {
+      console.log("Prev UnoParty: ", prev);
+      console.log("Updated Party: ", UpdatedParty);
+    return {
+      ...prev,
+      roomCode: UpdatedParty.roomCode,
       players: UpdatedParty.PlayerSlot // maps the players array to the object from the server side
+    };
   });
 });
+},[]);
+
+function HandleGameInitialization() {
+  if(!unoparty?.roomCode) {
+    console.error("No room code was found in the party state. ");
+    return;
+  }
+  socket.emit("start_game", unoparty.roomCode, (roomFull) => {
+    console.log("Player Limit: ", roomFull);
+    setmaxPlayer(roomFull);
+  });
+}
+
+useEffect(() => {
+  socket.on("start_game", (player_state) => {
+    console.log("Start Game Uno Party: ", unoparty);
+    console.log("UnoParty during Start Phase: ", unoparty);
+    console.log("Game Initialization: ", player_state);
+    setInitialGameState(player_state.gameState);
+    setStartGame(true);
+    setScreen("GameRoom");
+  });
+return () => {
+  socket.off("start_game");
+};
 },[]);
 
 return (
@@ -198,7 +242,7 @@ return (
     <SoundTrackComponent />
     <div className="nav-bar">
     <h1 className="extras">Competitive (At a later date)</h1>
-    <h1 className="store_title"><FontAwesomeIcon icon={faStore} className="fa-store"></FontAwesomeIcon>Store</h1>
+    <h1 className="store_title" onClick={() => setUnoStore("StoreFront")}><FontAwesomeIcon icon={faStore} className="fa-store"></FontAwesomeIcon>Store</h1>
    <h1 className="username-title">{username}</h1>
    <FontAwesomeIcon icon={faEnvelope} className="fa-envelope"></FontAwesomeIcon>
    <FontAwesomeIcon icon={faGripLines} className="fa-grip-lines"></FontAwesomeIcon>
@@ -238,8 +282,8 @@ return (
     <button type className="increment_slot_4">{unoparty?.players?.[3] ? <UserInitialIcon username={unoparty.players[3]}/> : "+"}</button>
     </div>
     <button type="submit" className="create_room" onClick={createUnoParty}>Create Party</button>
-    <button type="submit" className="readyup" onClick={() => setScreen("GameRoom")}>Ready</button>
-    <h1 className="player_limit">Maxmium: 1/4</h1>
+    <button type="submit" className="readyup" onClick={() => HandleGameInitialization()}>Ready</button>
+    <h1 className="player_limit">Maxmium Limit: {maxPlayer?.status || `0/${unoparty?.maxPlayers || 4}`}</h1>
     </div>
     )}
 
@@ -295,13 +339,19 @@ return (
             <button type="button" className="close_friend_request" onClick={() => setMinimizeInviteUI(true)}>Close</button> 
             </div>
         )}
-    {ReceivedPartyRequest?.from && (
+    {ReceivedPartyRequest?.from && !ClearPartyRequest && (
       <div className="received_invite_container"><i className="fa-sharp fa-solid fa-sparkles"></i><i className="fa-sharp fa-solid fa-sparkles sparkles-2"></i>
       <h6 className="received_request_header"><strong className="bold_request_header">{ReceivedPartyRequest.from}</strong> invited you to a party</h6>
-      <button type="button" className="accept_party_request" onClick={() => HandleAcceptPartyRequest()}>Accept</button>
+      <button type="button" className="accept_party_request" onClick={() => { HandleAcceptPartyRequest(), setClearPartyRequest(true)}}>Accept</button>
       <button type="button" className="decline_party_request">Decline</button>
       </div>
      )}
+
+    {ClearPartyRequest && (
+     <div className="clear_accept_party"></div>
+    )}
+
+
      
     {MinimizedPartyUI && (
         <div className="minimized_panel" onClick={() => setMinimizedParty(false)}>
@@ -379,8 +429,8 @@ return (
     )}
     </>
     )}
-    {onscreen === "GameRoom" && <MainGame />}
-
+    {onscreen === "GameRoom" && <MainGame username={username} socket={socket} players={unoparty?.players || []} roomCode={unoparty?.roomCode} initialGameState={initialGameState} />}
+    {UnoStore === "StoreFront" && <UNOStore username={username}  socket={socket}/>}
     </>
   )
 }
