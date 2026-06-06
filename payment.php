@@ -1,6 +1,8 @@
 
 <?php 
 
+
+
 function HandlingUserTransaction() {
 $full_name = INPUT_POST['full_name'];
 if(empty($full_name)) {
@@ -26,6 +28,28 @@ else {
 
 $payment_transaction = fopen("transaction.txt", "w")
 
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer=master/src/Exception.php';
+
+$mail->Host = '';
+$mail->Username = '';
+
+$mail->setFrom('UnoPartyOnline@support.com');
+$mail->addAddress($email_field);
+
+$email->subject('Order Transaction');
+$email->body('Thank you for your purchase! your order has been processed, please return to the game to view your items.')
+}
+
+try {
+$mail->send();
+}
+catch(Exception e) {
+echo 'Error Occured: Email could not be send or Email address does not exist';
 }
 ?>
 

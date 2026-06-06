@@ -22,29 +22,37 @@ import {faHouse,
         faMessage, 
         faAward,
         faPaperPlane,
+        faLock, 
+        faSackDollar
 } 
        from  "@fortawesome/free-solid-svg-icons";
 
 
 import './MainLobby.css'
 import MainGame from "./MainGame";
-import UNOStore from "./UNOStore";
 import UserInitialIcon from "./UserInitialIcon";
+import Confetti from "./assets/confetti.svg?react";
 
-import {BrowserRouter, Routes, Route, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 // declares a prop and fetches for objects
 function MainLobby({username, socket, friends}) {
 
 const [initialGameState, setInitialGameState] = useState(null);
+
+const [GameCurrency, setGameCurrency] = useState(null);
+const [payPartyTokens, setPayPartyTokens] = useState(null);
+const [MinimizePayUI, setMinimizePayUI] = useState(false);
+
 const [onscreen, setScreen] = useState("sidebar_menu");
 const [activePanel, setActivePanel] = useState(null);
+const [mapSelection, setMapSelection] = useState(null);
+
 const [FriendsPanel, setFriendsPanel] = useState(null);
 const [MinimizeFriendPanel, setMinimizeFriendPanel] = useState(false);
 
 const [MinimizeServerPanel, setMinimizeServerPanel] = useState(false);
 
-const [UnoStore, setUnoStore] = useState(null);
 
 const [PartyRoom, setPartyRoom] = useState(null);
 const [MinimizedPartyUI, setMinimizedParty] = useState(false);
@@ -85,6 +93,7 @@ const[maxPlayer, setmaxPlayer] = useState(false);
 console.log("Current UnoParty: ", unoparty);
 console.log("Curremt RoomCode: ", unoparty?.roomCode);
 
+console.log(Confetti);
 
 useEffect(() => {
   console.log("UnoParty Changed State: ", unoparty);
@@ -242,12 +251,48 @@ return (
     <SoundTrackComponent />
     <div className="nav-bar">
     <h1 className="extras">Competitive (At a later date)</h1>
-    <h1 className="store_title" onClick={() => setUnoStore("StoreFront")}><FontAwesomeIcon icon={faStore} className="fa-store"></FontAwesomeIcon>Store</h1>
+    <NavLink to="/UNOStore" end><h1 className="store_title"><FontAwesomeIcon icon={faStore} className="fa-store"></FontAwesomeIcon>Store</h1></NavLink>
    <h1 className="username-title">{username}</h1>
    <FontAwesomeIcon icon={faEnvelope} className="fa-envelope"></FontAwesomeIcon>
    <FontAwesomeIcon icon={faGripLines} className="fa-grip-lines"></FontAwesomeIcon>
    <button type="button" className="sign_out" onClick={() => LogOut()}>Sign Out</button>
+    <div className="party_token" onClick={() => {setPayPartyTokens("payment_UI"), setMinimizePayUI(false)}}>
+    <Confetti className="confetti_icon"/>
+    <h1 className="party_token_header">PT</h1>
+    <Confetti className="confetti_icon_two"/>
     </div>
+    </div>
+
+    {payPartyTokens === "payment_UI" && !MinimizePayUI && (
+      <div className="payment_UI">
+      <h1 className="party_token_bundle">Party Token Bundles</h1>
+      <button type="button" className="cancel_payment" onClick={() => setPayPartyTokens(true)}>Cancel</button>
+      <div className="token_pay_UI">
+      <FontAwesomeIcon icon={faSackDollar} className="money-bag"></FontAwesomeIcon>
+      <div className="token_consumable">
+      <h1 className="party_token_logo">PT</h1>
+      <h1 className="small_tokens">250 Tokens</h1>
+      </div>
+      <button type="submit" className="pay_title">$1.99</button>
+      </div>
+       <div className="token_pay_UI_2">
+      <FontAwesomeIcon icon={faSackDollar} className="money-bag_2"></FontAwesomeIcon>
+       <div className="token_consumable_2">
+      <h1 className="party_token_logo_2">PT</h1>
+      <h1 className="medium_tokens">750 Tokens</h1>
+      </div>
+      <button type="submit" className="pay_title_2">$4.99</button>
+      </div>
+       <div className="token_pay_UI_3">
+      <FontAwesomeIcon icon={faSackDollar} className="money-bag_2"></FontAwesomeIcon>
+       <div className="token_consumable_3">
+      <h1 className="party_token_logo_3">PT</h1>
+      <h1 className="large_tokens">1,750 Tokens</h1>
+      </div>
+      <button type="submit" className="pay_title_3">$9.99</button>
+      </div>
+      </div>
+    )}
     {onscreen === "sidebar_menu" && (
     <>
     <div className="sidebar_menu">
@@ -282,9 +327,27 @@ return (
     <button type className="increment_slot_4">{unoparty?.players?.[3] ? <UserInitialIcon username={unoparty.players[3]}/> : "+"}</button>
     </div>
     <button type="submit" className="create_room" onClick={createUnoParty}>Create Party</button>
+    <button type="button" className="map_selection" onClick={() => setMapSelection("map_interface_selection")}>Map Selection</button>
     <button type="submit" className="readyup" onClick={() => HandleGameInitialization()}>Ready</button>
     <h1 className="player_limit">Maxmium Limit: {maxPlayer?.status || `0/${unoparty?.maxPlayers || 4}`}</h1>
     </div>
+    )}
+
+    {mapSelection === "map_interface_selection" && (
+      <div className="map_interface_selection">
+      <h1 className="choose_map">Choose A Map:</h1>
+        <div className="map_container">
+        <h1 className="default_map">Default</h1>
+        </div>
+        <div className="map_container_2">
+        <FontAwesomeIcon icon={faLock} className="fa-lock"></FontAwesomeIcon>
+          <h1 className="beach">Beach</h1>
+        </div>
+
+        <div className="map_container_3">
+          <h1 className="casino">Casino</h1>
+        </div>
+      </div>
     )}
 
     {SettingUI === "setting_UI" && !MinimizeSettingUI && (
@@ -430,7 +493,6 @@ return (
     </>
     )}
     {onscreen === "GameRoom" && <MainGame username={username} socket={socket} players={unoparty?.players || []} roomCode={unoparty?.roomCode} initialGameState={initialGameState} />}
-    {UnoStore === "StoreFront" && <UNOStore username={username}  socket={socket}/>}
     </>
   )
 }

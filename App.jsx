@@ -3,8 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck} from "@fortawesome/free-solid-svg-icons";
 import { io } from 'socket.io-client';
 
+import {BrowserRouter, Routes, Route, NavLink} from "react-router-dom";
+
 import './App.css'
 import MainLobby from "./MainLobby"; 
+import UNOStore from "./UNOStore";
 
 const socket = io("http://localhost:3001"); // connects to the server.js file
 
@@ -16,9 +19,6 @@ socket.on("connect", () => {
 function App() { 
   const [count, setCount] = useState(0)
 
-  // establishing a screen state for static switching
-  const [screen, setScreen] = useState("ROE");
-  
   const[friends, SaveFriends] = useState([]);
 
   const [username, setUserName] = useState(() => {
@@ -37,7 +37,6 @@ function App() {
 
   useEffect(() => {
    if (username) {
-    setScreen("lobby");
     RegisterID(username);
 
 
@@ -58,9 +57,10 @@ function App() {
     <h3>UNO<br />
       PARTY<br />
       ONLINE</h3>
-    {screen === "ROE" && (
-      <>
-        <div className="ROE">
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<>
+            <div className="ROE">
         <h1 className="rules_title">ROE</h1>
         <ul className="list_of_engagements">
         <li><FontAwesomeIcon icon={faCheck} className="check"></FontAwesomeIcon>Setup: Deal 7 cards to each player, turn one card up to start the discard pile, and place the rest face-down to draw.</li><br></br>
@@ -69,9 +69,9 @@ function App() {
         <li><FontAwesomeIcon icon={faCheck} className="check"></FontAwesomeIcon>UNO Penalty: When down to one card, you must press the button that will say "UNO!" If caught by another player before the next person begins their turn, you must draw 2 cards.</li>
         </ul>
         <label htmlFor="username" className="username_header">Enter username:</label>
-        <input type="text" className="input_field" value={username} onChange={(e) => setUserName(e.target.value)}>
+        <input type="text" className="input_field" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="username goes here">
         </input>      
-        <button type="submit" className="create-account" onClick={() => RegisterID(username)}>Create Account</button>
+        <NavLink to="/MainLobby" end><button type="submit" className="create-account" onClick={() => RegisterID(username)}>Create Account</button></NavLink>
         </div>
          <div className="UNO_Card">
         <h2>UNO</h2>
@@ -88,9 +88,12 @@ function App() {
         <h2 className="UNO_Title3">UNO</h2>
         <div className="circle_3"></div>
         </div>
-    </>
-    )}
-    {screen === "lobby" && <MainLobby username={username}  socket={socket} friends={friends}/>}
+        </>}
+        />
+        <Route path="/MainLobby" element={<MainLobby username={username} socket={socket} friends={friends} />} />
+        <Route path="/UNOStore" element={<UNOStore username={username} socket={socket} friends={friends} />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }

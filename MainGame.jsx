@@ -31,7 +31,9 @@ function MainGame({username, players, socket, roomCode, initialGameState}) {
     const [onCardAnimation] = useState(true);
     const [isCardRevealed, setCardRevealed] = useState(false);
 
-    const[ColorWheel, setColorWheel] = useState(false);
+    const [ColorWheel, setColorWheel] = useState(false);
+    const [HandOnShoulderMeme, setHandOnShoulderMeme] = useState(false);
+
     const [Winner, setWinner] = useState(null);
 
 
@@ -252,7 +254,7 @@ useEffect(() => {
     )}
 
     {
-    items.name === "+4" && (
+    items.name === "+4" &&  (
     <>
      <h2 className="Draw_Special_Card">+4</h2> 
        <div className="special_circle"></div>
@@ -261,6 +263,9 @@ useEffect(() => {
        <div className="draw_4_logo_green"></div>
        <div className="draw_4_logo_yellow"></div>
     </>
+    )}
+    {HandOnShoulderMeme && (
+        <img src={YourCooked}/>
     )}
     {
     items.name === "skip" && (

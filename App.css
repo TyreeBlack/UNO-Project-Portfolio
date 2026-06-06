@@ -73,7 +73,9 @@ h3 {
 
 .username_header {
   color: #fff;
+  font-size: 23px;
   position: relative;
+  left: -40px;
   bottom: -30px;
 }
 
@@ -82,7 +84,7 @@ h3 {
   background-color: transparent;
   border: 2px solid white;
   position: relative;
-  right: -10px;
+  left: -30px;
   bottom: -30px;
 }
 
