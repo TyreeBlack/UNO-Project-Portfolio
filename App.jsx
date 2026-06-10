@@ -69,8 +69,9 @@ function App() {
         <li><FontAwesomeIcon icon={faCheck} className="check"></FontAwesomeIcon>UNO Penalty: When down to one card, you must press the button that will say "UNO!" If caught by another player before the next person begins their turn, you must draw 2 cards.</li>
         </ul>
         <label htmlFor="username" className="username_header">Enter username:</label>
-        <input type="text" className="input_field" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="username goes here">
-        </input>      
+        <input type="text" className="input_field" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="Enter username here" required={true}></input>      
+        <label htmlFor="password" className="password_header">Create a password:</label>
+        <input type="password" className="password_field" placeholder="Ingnore this for now" required={true}></input>
         <NavLink to="/MainLobby" end><button type="submit" className="create-account" onClick={() => RegisterID(username)}>Create Account</button></NavLink>
         </div>
          <div className="UNO_Card">

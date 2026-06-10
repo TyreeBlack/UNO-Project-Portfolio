@@ -6,7 +6,7 @@ body {
     font-size: 45px;
     color: white;
     position: relative;
-    right: -480px;
+    right: -460px;
     cursor: pointer;
 }
 
@@ -18,7 +18,7 @@ body {
     font-size: 55px;
     color: white;
     position: relative;
-    right: -530px;
+    right: -500px;
     cursor: pointer;
 }
 
@@ -34,6 +34,11 @@ body {
     position: relative;
     left: -22px;
     cursor: pointer;
+}
+
+.fa-newsletter {
+    font-size: 27px;
+    color: red;
 }
 
 .fa-user {
@@ -223,7 +228,8 @@ body {
     border-radius: 50%;
     border: 4px solid rgb(93, 184, 236);
     position: relative;
-    right: -450px;
+    right: -400px;
+    z-index: 100;
     cursor: pointer;
 }
 
@@ -234,6 +240,7 @@ body {
     bottom: -12px;
     left: -20px;
     transform:rotate(80deg);
+    z-index: 4;
 }
 
 .confetti_icon_two {
@@ -243,6 +250,36 @@ body {
     top: -27px;
     right: -9px;
     transform:rotate(-90deg);
+    z-index: 4;
+}
+
+.quantity_token_field {
+    background: rgb(233, 203, 37);
+    display: flex;
+    width: 270px;
+    padding: 15px;
+    border: 4px solid white;
+    border-radius: 12px;
+    position: relative;
+    top: -112px;
+    right: -75px;
+   
+}
+
+.credit_header {
+    color: rgb(41, 102, 231);
+    font-size: 28px;
+    position: relative;
+    right: -110px;
+}
+
+.quantity_tokenselector {
+    color: white;
+    font-size: 30px;
+    margin: auto 475px;
+    position: relative;
+    top: -61px;
+    z-index: 4;
 }
 
 .party_token_header {
@@ -255,6 +292,7 @@ body {
     -webkit-text-stroke: 1px lightblue;
     position: relative;
     top: -8px;
+    z-index: 8;
 }
 
 .sign_out {
@@ -269,7 +307,7 @@ body {
     border: 3px solid white;
     border-radius: 15px;
     position: relative;
-    right: -830px;
+    right: -990px;
     cursor: pointer;
 }
 
@@ -282,14 +320,14 @@ body {
     background-color: gold;
     box-shadow: 0 0 4px gray, 0 0 4px gray;
     display: flex;
-    width: 1780px;
+    width: 1999px;
     padding: 35px;
     margin: 0;
     align-items: center;
     line-height: 1lvw;
     position: relative;
     top: -450px;
-    right: -90px;
+    right: -50px;
     overflow: visible;
 }
 
@@ -306,7 +344,7 @@ h1 {
     font-size: 35px;
     color: white;
     position: relative;
-    right: -420px;
+    right: -380px;
 }
 
 .username-title {
@@ -315,7 +353,7 @@ h1 {
     color: white;
     float: right;
     position: relative;
-    right: -445px;
+    right: -415px;
 }
 
 .join_party_header {
@@ -489,6 +527,7 @@ h1 {
 
 .notify_request_board {
     background-color: green;
+    display: flex;
     box-shadow: 0 0 4px gray, 0 0 4px gray;
     width: 540px;
     height: 120px;
@@ -652,6 +691,104 @@ h1 {
     bottom: -220px;
 }
 
+.notify_title {
+    position: relative;
+    top: -90px;
+    cursor: pointer;
+}
+
+.notify_bell {
+    color: gold;
+    font-size: 125px;
+    position: relative;
+    left: -10px;
+    top: -50px;
+}
+
+.subscribe_panel {
+    display: flex;
+    background:linear-gradient(rgb(13, 113, 206), rgb(46, 125, 228), blue);
+    box-shadow: inset 0 0 30px black;
+    width: 820px;
+    height: 650px;
+    border-radius: 42px;
+    border: 6px solid gold;
+    padding: 20px;
+}
+
+.stay_alert {
+    color: white;
+    font-size: 35px;
+    text-shadow: 2px 4px black;
+}
+
+.subscribe_field {
+    background-color: white;
+    box-shadow: 0 0 4px black, 0 0 4px black;
+    font-size: 23px;
+    width: 490px;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+    left: -40px;
+    bottom: -140px;
+}
+
+.subscribe_summary {
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 27px;
+    position: relative;
+    right: -10px;
+    bottom: -165px;
+}
+
+strong {
+    color: gold;
+    text-shadow: 2px 2px black;
+}
+
+.subscribe_exit {
+    background:linear-gradient(darkred, red, crimson);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid gold;
+    z-index: 4;
+    position: relative;
+    top: -310px;
+    right: -730px;
+    cursor: pointer;
+}
+
+.exit_notify {
+    color: white;
+    font-size: 45px;
+    position: relative;
+    bottom: -10px;
+    cursor: pointer;
+}
+
+.exit_notify:hover {
+    color: black;
+}
+
+.subscribe {
+    background:linear-gradient(green, lime, rgb(32, 131, 32));
+    box-shadow: 0 0 4px black, 0 0 8px black;
+    width: 390px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    left: -10px;
+    bottom: -80px;
+    cursor: pointer;
+
+}
 
 .tabname_divider {
     color: white;
@@ -672,14 +809,14 @@ h1 {
     color: white;
     border: 2px solid white;
     position: relative;
-    top: -180px;
+    top: -170px;
 }
 
 .tabname_divider_four {
     color: white;
     border: 2px solid white;
     position: relative;
-    top: -135px;
+    top: -185px;
     
 }
 .create_item {
@@ -856,11 +993,222 @@ h1 {
     cursor: pointer;
 }
 
+.claim_rewards {
+    background:linear-gradient(rgb(196, 193, 193), white, lightgray);
+    box-shadow: inset 0 0 20px black;
+    width: 790px;
+    height: 910px;
+    padding: 30px;
+    border-radius: 22px;
+    position: relative;
+    top: -450px;
+    right: -930px;
+}
+
+.reward_inbox {
+    color: white;
+    position: relative;
+    left: -170px;
+}
+
+.reward_number {
+    color: white;
+    font-size: 27px;
+    position: relative;
+    top: -43px;
+    right: -10px;
+}
+
+.exit_reward {
+    font-size: 35px;
+    color: red;
+    position: relative;
+    top: -82px;
+    right: -320px;
+    cursor: pointer;
+}
+
+.exit_reward:hover {
+    color: darkred;
+}
+
+.daily_login {
+    background:linear-gradient(white, lightgray, lightgray);
+    width: 770px;
+    padding: 20px;
+    border-radius: 24px;
+    border: 2px solid gray;
+    position: relative;
+    left: -20px;
+    top: -40px;
+}
+
+.daily_reward {
+    color: white;
+    font-size: 25px;
+    position: relative;
+    left: -120px;
+    bottom: -60px;
+}
+
+
+.claim_daily {
+    background:linear-gradient(rgb(21, 177, 21), lime, rgb(19, 194, 19));
+    width: 220px;
+    padding: 20px;
+    border-radius: 32px;
+    border: 4px solid white;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+    position: relative; 
+    right: -270px;
+    cursor: pointer;
+}
+
+.claim_daily:hover {
+    background:linear-gradient(green, green, lime);
+}
+
+.weekly_challenge {
+    background:linear-gradient(white, lightgray, lightgray);
+    width: 770px;
+    padding: 20px;
+    border-radius: 24px;
+    border: 2px solid gray;
+    position: relative;
+    left: -20px;
+    top: -40px;
+}
+
+.weekly_reward {
+    color: white;
+    font-size: 25px;
+    position: relative;
+    left: -110px;
+    bottom: -30px;
+}
+
+.claim_weekly {
+    background:linear-gradient(rgb(21, 177, 21), lime, rgb(19, 194, 19));
+    width: 220px;
+    padding: 20px;
+    border-radius: 32px;
+    border: 4px solid white;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+    position: relative; 
+    top: -30px;
+    right: -270px;
+    cursor: pointer;
+}
+
+.claim_weekly:hover {
+     background:linear-gradient(green, green, lime);
+}
+
+.victory_challenge {
+    background:linear-gradient(white, lightgray, lightgray);
+    width: 770px;
+    padding: 20px;
+    border-radius: 24px;
+    border: 2px solid gray;
+    position: relative;
+    left: -20px;
+    top: -40px;
+}
+
+.victory_reward {
+    color: white;
+    font-size: 25px;
+    position: relative;
+    left: -110px;
+    bottom: -30px;
+}
+
+.claim_victory {
+    background:linear-gradient(rgb(21, 177, 21), lime, rgb(19, 194, 19));
+    width: 220px;
+    padding: 20px;
+    border-radius: 32px;
+    border: 4px solid white;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+    position: relative; 
+    top: -30px;
+    right: -270px;
+    cursor: pointer;
+}
+
+.claim_victory:hover {
+     background:linear-gradient(green, green, lime);
+}
+
+.event_challenge {
+    background:linear-gradient(white, lightgray, lightgray);
+    width: 770px;
+    padding: 20px;
+    border-radius: 24px;
+    border: 2px solid gray;
+    position: relative;
+    left: -20px;
+    top: -40px;
+}
+
+.event_reward {
+    color: white;
+    font-size: 25px;
+    position: relative;
+    left: -110px;
+    bottom: -30px;
+}
+
+.claim_event {
+    background:linear-gradient(rgb(21, 177, 21), lime, rgb(19, 194, 19));
+    width: 220px;
+    padding: 20px;
+    border-radius: 32px;
+    border: 4px solid white;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+    position: relative; 
+    top: -30px;
+    right: -270px;
+    cursor: pointer;
+}
+
+.claim_event:hover {
+     background:linear-gradient(green, green, lime);
+}
+
+.claim_all {
+    background:linear-gradient(rgb(58, 151, 226), rgb(34, 163, 202), rgb(47, 179, 219));
+    box-shadow: inset 0 0 10px black;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+    width: 270px;
+    padding: 25px;
+    border: 4px solid white;
+    border-radius: 32px;
+    position: relative;
+    bottom: -5px;
+    cursor: pointer;
+}
+
+.claim_all:hover {
+    background:linear-gradient(rgb(19, 126, 226), rgb(46, 122, 223), blue);
+}
+
+
 .payment_UI {
     background:linear-gradient(rgb(19, 100, 177), blue, rgb(19, 100, 177));
     box-shadow: 0 0 4px black, 0 0 4px black;
     width: 1620px;
-    height: 570px;
+    height: 650px;
     padding: 40px;
     border-radius: 32px;
     border: 2px solid black;

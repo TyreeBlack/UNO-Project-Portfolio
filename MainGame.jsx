@@ -221,7 +221,21 @@ useEffect(() => {
 
 
     {XPBoard === "XP" && !MinimizeXPBoard && (
+
     <div className="XP_Board_Container">
+    <div className="victory_banner">
+     <h1 className="victory"><span>V</span>
+                            <span>I</span>
+                            <span>C</span>
+                            <span>T</span>
+                            <span>O</span>
+                            <span>R</span>
+                            <span>Y</span>
+                            <span>!</span></h1>
+    </div>
+    <div className="won_banner">
+    <h1 className="winner">YOU WON!</h1>
+    </div>
     <h6 className="player_progress">Player Progress</h6>
     <FontAwesomeIcon icon={faCaretDown} className="fa-caret" onClick={() => setMinimizeXPBoard(true)}></FontAwesomeIcon>
     <i class="fa-sharp fa-solid fa-stars"></i>

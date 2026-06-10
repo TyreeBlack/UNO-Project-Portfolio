@@ -82,19 +82,6 @@ body {
 
 }
 
-.fa-caret {
-    color: white;
-    font-size: 95px;
-    position: relative;
-    top: -132px;
-    right: -568px;
-    cursor: pointer;
-}
-
-.fa-caret:hover {
-    color: darkblue;
-}
-
 .fa-minus {
     font-size: 200px;
     transform: scaleX(2);
@@ -932,15 +919,195 @@ h4 {
     background-color: darkred;
 }
 
+.victory_banner {
+    background:linear-gradient(yellow, gold, gold);
+    box-shadow: inset 0 0 22px black;
+    border: 6px solid black;
+
+    filter: 
+    drop-shadow(0 0 10px gold)
+    drop-shadow(0 0 8px gold);
+    width: 1320px;
+    padding: 30px;
+    border-radius: 24px;
+    position: relative;
+    left: -160px;
+
+    transform:skewX(3deg);
+}
+
+
+.victory span:nth-child(1) {
+    color: red;
+    font-size: 100px;
+     -webkit-text-stroke: 2px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    letter-spacing: 2px;
+}
+
+.victory span:nth-child(2) {
+    color: orange;
+     -webkit-text-stroke: 2px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    font-size: 100px;
+}
+
+.victory span:nth-child(3) {
+    color: yellow;
+     -webkit-text-stroke: 2px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    font-size: 100px;
+}
+
+.victory span:nth-child(4) {
+    color: lime;
+     -webkit-text-stroke: 2px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    font-size: 100px;
+}
+
+.victory span:nth-child(5) {
+    color: cyan;
+     -webkit-text-stroke: 2px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    font-size: 100px;
+}
+
+.victory span:nth-child(6) {
+    color: rgb(187, 17, 187);
+    -webkit-text-stroke: 2px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    font-size: 100px;
+}
+
+.victory span:nth-child(7) {
+    color: magenta;
+     -webkit-text-stroke: 2px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    font-size: 100px;
+}
+
+.victory span:nth-child(8) {
+    color: rgb(235, 204, 30);
+    -webkit-text-stroke: 1px white;
+    text-shadow:
+    2px 2px 0 black,
+    3px 3px 0 black,
+    4px 4px 0 black, 
+    5px 5px 0 black,
+    6px 6px 0 black,
+    7px 7px 0 black, 
+    8px 8px 0 black, 
+    9px 9px 0 black,
+    10px 10px 0 black,
+    11px 11px 0 black,
+    12px 12px 0 black;
+    font-size: 100px;
+    transform:rotate(-30deg);
+}
+
+.won_banner {
+    background:linear-gradient(rgb(10, 99, 172), rgb(17, 174, 226), blue);
+    box-shadow: inset 0 0 20px black;
+    filter:
+    drop-shadow(0 0 8px white)
+    drop-shadow(0 0 10px white);
+    padding: 20px;
+    border-radius: 22px;
+}
+
+.winner {
+    color: white;
+    text-shadow: 8px 4px black;
+    font-size: 86px;
+}
+
 .XP_Board_Container {
     background:linear-gradient(blue, darkblue, blue);
     box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
     width: 1040px;
-    height: 1100px;
+    height: 1500px;
     border-radius: 32px;
     position: relative;
     right: -160px;
-    top: -1240px;
+    top: -1320px;
     z-index: 1000;
 }
 
@@ -962,6 +1129,8 @@ h4 {
   10px 10px 0 black,
   11px 11px 0 black,
   12px 12px 0 black;
+  position: relative;
+  bottom: -170px;
 }
 
 .level {

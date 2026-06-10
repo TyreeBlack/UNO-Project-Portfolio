@@ -17,10 +17,12 @@ import {faHouse,
         faFlag,
         faGripLines,
         faGear,
+        faBell,
         faX,
         faXmark,
         faMessage, 
         faAward,
+        faNewspaper,
         faPaperPlane,
         faLock, 
         faSackDollar
@@ -32,6 +34,7 @@ import './MainLobby.css'
 import MainGame from "./MainGame";
 import UserInitialIcon from "./UserInitialIcon";
 import Confetti from "./assets/confetti.svg?react";
+import SquareBracket from "./assets/square-bracket.svg?react";
 
 import {NavLink} from "react-router-dom";
 
@@ -43,6 +46,9 @@ const [initialGameState, setInitialGameState] = useState(null);
 const [GameCurrency, setGameCurrency] = useState(null);
 const [payPartyTokens, setPayPartyTokens] = useState(null);
 const [MinimizePayUI, setMinimizePayUI] = useState(false);
+
+const [claimRewards, setClaimRewards] = useState(null);
+const [MinimizeRewardPanel, setMinimizeRewardPanel] = useState(false);
 
 const [onscreen, setScreen] = useState("sidebar_menu");
 const [activePanel, setActivePanel] = useState(null);
@@ -85,6 +91,9 @@ const[FriendStatus, setFriendStatus] = useState(null);
 
 const[SettingUI, setSettingUI] = useState(null);
 const[MinimizeSettingUI, setMinimizeSettingUI] = useState(false);
+
+const [NotifyPanel, setNotifyPanel] = useState(null);
+const [exitNotifyPanel, setExitNotifyPanel] = useState(false);
 
 const[StartGame, setStartGame] = useState(false);
 const[maxPlayer, setmaxPlayer] = useState(false);
@@ -253,15 +262,43 @@ return (
     <h1 className="extras">Competitive (At a later date)</h1>
     <NavLink to="/UNOStore" end><h1 className="store_title"><FontAwesomeIcon icon={faStore} className="fa-store"></FontAwesomeIcon>Store</h1></NavLink>
    <h1 className="username-title">{username}</h1>
-   <FontAwesomeIcon icon={faEnvelope} className="fa-envelope"></FontAwesomeIcon>
+   <FontAwesomeIcon icon={faEnvelope} className="fa-envelope" onClick={() => { setClaimRewards("claim_rewards"), setMinimizeRewardPanel(false)}}></FontAwesomeIcon>
    <FontAwesomeIcon icon={faGripLines} className="fa-grip-lines"></FontAwesomeIcon>
    <button type="button" className="sign_out" onClick={() => LogOut()}>Sign Out</button>
-    <div className="party_token" onClick={() => {setPayPartyTokens("payment_UI"), setMinimizePayUI(false)}}>
+    <div className="party_token">
     <Confetti className="confetti_icon"/>
     <h1 className="party_token_header">PT</h1>
     <Confetti className="confetti_icon_two"/>
+     <FontAwesomeIcon icon={faPlus} className="quantity_tokenselector" onClick={() => {setPayPartyTokens("payment_UI"), setMinimizePayUI(false)}}></FontAwesomeIcon>
+    <div className="quantity_token_field">
+    <h1 className="credit_header">250</h1>
     </div>
     </div>
+    </div>
+    {claimRewards === "claim_rewards" && !MinimizeRewardPanel && (
+      <div className="claim_rewards">
+      <h1 className="reward_inbox">📫 Rewards Inbox</h1>
+      <h1 className="reward_number">( 4 )</h1>
+      <FontAwesomeIcon icon={faX} className="exit_reward" onClick={() => setMinimizeRewardPanel(true)}></FontAwesomeIcon>
+        <div className="daily_login">
+          <h1 className="daily_reward">🎁 Daily Login Award +100 Party Tokens</h1>
+          <button type="button" className="claim_daily">CLAIM REWARD</button>
+        </div>
+         <div className="weekly_challenge">
+          <h1 className="weekly_reward">Weekly Challenge Award +250 Party Tokens</h1>
+          <button type="button" className="claim_weekly">CLAIM REWARD</button>
+        </div>
+        <div className="victory_challenge">
+          <h1 className="victory_reward">🏅 Victory Award +1 Card Pack</h1>
+          <button type="button" className="claim_victory">CLAIM REWARD</button>
+        </div>
+         <div className="event_challenge">
+          <h1 className="event_reward">Event Reward +500 Party Tokens</h1>
+          <button type="button" className="claim_event">CLAIM REWARD</button>
+        </div>
+      <button type="button" className="claim_all">CLAIM ALL</button>
+      </div>
+    )}
 
     {payPartyTokens === "payment_UI" && !MinimizePayUI && (
       <div className="payment_UI">
@@ -310,6 +347,7 @@ return (
     <h1 className="friends_title" onClick={() => { setFriendsPanel("friend_UI"), setMinimizeFriendPanel(false)}}><FontAwesomeIcon icon={faPersonCirclePlus} className="fa-friends"></FontAwesomeIcon>Friends</h1>
     <h1 className="settings_title" onClick={() => {setSettingUI("setting_UI"), setMinimizeSettingUI(false)}}><FontAwesomeIcon icon={faGear} className="fa-gear"></FontAwesomeIcon>Settings</h1>
     <hr className="tabname_divider_three" />
+    <h1 className="notify_title" onClick={() => {setNotifyPanel("subscribe_panel"), setExitNotifyPanel(false)}}><FontAwesomeIcon icon={faNewspaper} className="fa-newsletter"></FontAwesomeIcon>Notifications</h1>
      <hr className="tabname_divider_four"/>
     </div>
     {activePanel === "party" && (
@@ -360,6 +398,21 @@ return (
       <h1 className="auto_play">Auto Play:</h1>
       <i className="fa-solid fa-toggle-large-on"></i>
       </div>
+      </div>
+    )}
+
+    {NotifyPanel === "subscribe_panel" && !exitNotifyPanel && (
+      <div className="subscribe_panel">
+      <form action="automated_email.php" method="post">
+      <h1 className="stay_alert">Stay Alert on all the latest details!</h1>
+      <p className="subscribe_summary">Subscribe here if you would like to be notified on all updates regarding <strong>UNO Party Online</strong></p>
+      <FontAwesomeIcon icon={faBell} className="notify_bell"></FontAwesomeIcon>
+      <input type="email" className="subscribe_field" name="email_field" placeholder="Enter your email.." required={true}></input>
+      <div className="subscribe_exit" onClick={() => setExitNotifyPanel(true)}>
+      <FontAwesomeIcon icon={faX} className="exit_notify"></FontAwesomeIcon>
+      </div>
+      <button type="submit" className="subscribe">SUBSCRIBE!</button>
+      </form>
       </div>
     )}
 

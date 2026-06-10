@@ -64,8 +64,8 @@ h3 {
   background-color: black;
   box-shadow: 0 0 4px red, 0 0 4px blue;
   width: 100%;
-  max-width: 500px;
-  height: 520px;
+  max-width: 600px;
+  height: 620px;
   border-radius: 7px;
   margin:auto 340px;
 }
@@ -74,18 +74,47 @@ h3 {
 .username_header {
   color: #fff;
   font-size: 23px;
+  font-family: 'Roboto', sans-serif;
   position: relative;
-  left: -40px;
+  left: -10px;
   bottom: -30px;
 }
 
-.input_field {
-  color: white;
-  background-color: transparent;
-  border: 2px solid white;
+
+.password_header {
+  color: #fff;
+  font-size: 23px;
+  font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
   position: relative;
-  left: -30px;
-  bottom: -30px;
+  right: -10px;
+  bottom: -85px;
+}
+
+.input_field {
+  color: black;
+  font-size: 19px;
+  background-color: white;
+  width: 270px;
+  box-shadow: 0 0 4px red, 0 0 8px red;
+  padding: 5px;
+  border-radius: 8px;
+  position: relative;
+  left: -178px;
+  bottom: -70px;
+}
+
+.password_field {
+  width: 280px;
+  font-size: 19px;
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 4px red, 0 0 8px red;
+  padding: 4px;
+  border-radius: 8px;
+  position: relative;
+  left: -185px;
+  bottom: -122px;
 }
 
 
@@ -107,14 +136,19 @@ h3 {
 .create-account {
   background-color: red;
   color: white;
-  width: 220px;
+  width: 280px;
+  font-size: 21px;
   padding: 8px;
   border-radius: 5px;
   position: relative;
-  bottom: -90px;
+  left: -10px;
+  bottom: -180px;
   cursor: pointer;
 }
 
+.create-account:hover {
+  background-color: darkred;
+}
 
 h2 {
   font-size: 80px;
