@@ -91,6 +91,8 @@ function App() {
         <h2 className="UNO_Title3">UNO</h2>
         <div className="circle_3"></div>
         </div>
+
+        <footer className="signature">2026 @UNO Party Online v.1 Created by Tyree Black</footer>
         </>}
         />
         <Route path="/MainLobby" element={<MainLobby username={username} socket={socket} friends={friends} />} />

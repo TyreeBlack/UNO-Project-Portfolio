@@ -848,8 +848,6 @@ strong {
 }
 
 
-
-
 .host_slot {
     position: relative;
     top: -20px;
@@ -1444,51 +1442,127 @@ background-color: blue;
 }
 
 .game_mode_UI {
-    background:linear-gradient(rgb(167, 158, 158), rgb(148, 144, 144), rgb(155, 152, 152), gray, rgb(122, 120, 120), gray);
+    background:linear-gradient(rgb(33, 62, 158), rgb(48, 73, 156), rgb(33, 54, 100), rgb(37, 56, 141), rgb(26, 31, 92), rgb(35, 46, 83));
     box-shadow: inset 0 0 40px black;
-    width: 1550px;
-    height: 820px;
+    width: 1920px;
+    height: 1150px;
     border-radius: 32px;
     position: relative;
     top: -860px;
 }
 
+.game_choice {
+    color: white;
+    font-size: 57px;
+    font-family: 'Happy Monkey', cursive;
+    text-shadow: 4px 4px black;
+}
+
+.choice_of_card {
+    color: gold;
+    font-size: 28px;
+    font-family: 'Happy Monkey', cursive;
+    position: relative;
+    left: -30px;
+}
+
 .casual {
     color: white;
     font-size: 65px;
+    font-weight: bold;
+    font-family: 'Sour Gummy', cursive;
     position: relative;
-    left: -590px;
+    left: -20px;
+    bottom: -30px;
+}
+
+.casual_mode {
+    background:linear-gradient(yellow, gold, rgb(236, 236, 127), rgb(236, 209, 56));
+    box-shadow: inset 0 0 20px black;
+    width: 540px;
+    height: 710px;
+    border-radius: 32px;
+    border: 5px solid white;
+    color: white;
+    font-size: 46px;
+    font-weight: bold;
+    text-shadow: 4px 4px black;
+    position: relative;
+    right: -90px;
+    bottom: -283px;
+    cursor: pointer;
+}
+
+.casual_introduction {
+    color: black;
+    text-shadow: none;
+    font-size: 25px;
+    position: relative;
     bottom: -50px;
 }
 
 .casual_button {
-    background:linear-gradient(yellow, gold, yellow, gold);
-    box-shadow: inset 0 0 10px black;
-    width: 450px;
-    height: 250px;
+    background:linear-gradient(gold, yellow, gold);
+    box-shadow: inset 0 0 8px black;
+    width: 390px;
+    padding: 30px;
+    font-size: 29px;
+    white-space: nowrap;
     border-radius: 32px;
     color: crimson;
-    font-size: 46px;
-    font-weight: bold;
+    border: 5px solid white;
     position: relative;
-    left: -550px;
-    bottom: -473px;
+    bottom:-370px;
     cursor: pointer;
 }
 
-.wild_party_button {
+.wild_party{
     background:linear-gradient(rgb(6, 89, 145), rgb(28, 83, 155), rgb(153, 21, 153), rgb(58, 5, 58));
     box-shadow: inset 0 0 10px black;
-    width: 450px;
-    height: 250px;
+    width: 590px;
+    height: 710px;
     border-radius: 32px;
+    border: 5px solid black;
     color: gold;
     font-size: 46px;
     font-weight: bold;
     position: relative;
-    left: -100px;
-    bottom: -224px;
+    right: -680px;
+    top: -424px;
     cursor: pointer;
+}
+
+.wild_introduction {
+    color: white;
+    font-size: 25px;
+    text-shadow: none;
+    position: relative;
+    bottom: -75px;
+}
+
+.wild_uno {
+    color: gold;
+    text-shadow: 4px 4px black;
+    font-weight: bold;
+    font-size: 65px;
+    font-family: 'Fuzzy Bubbles', cursive;
+    position: relative;
+    bottom: -50px;
+}
+
+.wild_party_button {
+    background:linear-gradient(magenta, purple, rgb(114, 35, 160), purple);
+    box-shadow: inset 0 0 20px black;
+    width: 390px;
+    padding: 30px;
+    border-radius: 32px;
+    border: 4px solid white;
+    font-size: 29px;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    position: relative;
+    bottom: -370px;
 }
 
 .wild_party_theme {
@@ -1581,19 +1655,75 @@ background-color: blue;
     position: relative;
     bottom: -50px;
 }
-.twovtwo_party_button {
+.team_party {
  background:linear-gradient(to right, cyan, cyan, crimson, crimson);
-box-shadow: inset 0 0 10px black;
-    width: 450px;
-    height: 250px;
+box-shadow: inset 0 0 30px black;
+    width: 570px;
+    height: 690px;
     border-radius: 32px;
+    border: 6px solid white;
     color: white;
     font-size: 46px;
     font-weight:bold;
     position: relative;
-    right: -350px;
-    top: -28px;
+    right: -1320px;
+    top: -1121px;
     cursor: pointer;
+}
+
+.pow {
+    color: gold;
+    width: 245px;
+    position: relative;
+    top: -620px;
+    right: -170px;
+}
+
+.user_1 {
+    background:linear-gradient(blue);
+    width: 145px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    top: -2240px;
+    right: -40px;
+}
+.user_2 {
+    color: crimson;
+    width: 135px;
+    position: relative;
+    top: -3840px;
+    right: -410px;
+}
+.team_header {
+    color: white;
+    text-shadow: 4px 4px black;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 65px;
+    position: relative;
+    top: -4680px;
+}
+
+.team_introduction {
+    color: black;
+    font-size: 25px;
+    text-shadow: none;
+    position: relative;
+    top: -4590px;
+}
+
+.team_party_button {
+    background:linear-gradient(rgb(35, 138, 207),rgb(71, 183, 228), rgb(70, 162, 190), rgb(52, 181, 233), rgb(31, 102, 124));
+    box-shadow: inset 0 0 30px black;
+    width: 390px;
+    padding: 30px;
+    border-radius: 32px;
+    border: 4px solid white;
+    font-size: 35px;
+    cursor: pointer;
+    position: relative;
+    top: -4480px;
 }
 
 .choose_map {

@@ -35,6 +35,10 @@ import MainGame from "./MainGame";
 import UserInitialIcon from "./UserInitialIcon";
 import Confetti from "./assets/confetti.svg?react";
 
+import Pow from "./assets/pow.svg?react";
+
+import User from "./assets/user.svg?react";
+
 
 import {NavLink} from "react-router-dom";
 
@@ -378,22 +382,32 @@ return (
 
     {GameMode === "game_mode_UI" && (
       <div className="game_mode_UI">
+      <h1 className="game_choice">SELECT A GAME MODE</h1>
+      <p className="choice_of_card">Whatever suits your vibe. We got it here.</p>
       <div className="casual_mode">
-        <h1 className="casual">Casual</h1>
-        <button type="button" className="casual_button">CASUAL</button>
+        <h1 className="casual">CASUAL</h1>
+        <p className="casual_introduction">Enjoying UNO the traditional way. No crazy cards, just good vibes.</p>
+        <button type="button" className="casual_button">PLAY CASUAL</button>
         </div>
       <div className="wild_party">
-        <button type="button" className="wild_party_button" onClick={() => setWildParty("wild_party_theme")}>WILD PARTY</button>
+        <h1 className="wild_uno">WILD UNO</h1>
+        <p className="wild_introduction">More crazy twists, choice of cards, the doom & despair of UNO Party.</p>
+        <button type="button" className="wild_party_button" onClick={() => setWildParty("wild_party_theme")}>PLAY WILD UNO</button>
       </div>
-      <div className="2v2_party">
-        <button type="button" className="twovtwo_party_button">2v2</button>
+      <div className="team_party">
+        <Pow className="pow"/>
+        <User className="user_1" />
+        <User className="user_2" />
+        <h1 className="team_header">2v2</h1>
+        <p className="team_introduction">Its a team based game in this pack edition. Choose wisely, collaborate, communicate and dominate the other team.</p>
+        <button type="button" className="team_party_button"> PLAY 2v2</button>
       </div>
       </div>
     )}
 
     {WildParty === "wild_party_theme" && (
       <div className="wild_party_theme">
-      <h1 className="wild_header">WILD PARTY</h1>
+      <h1 className="wild_header">WILD UNO</h1>
       <div className="wild_container">
     <button type className="decrement_slot">{unoparty?.players?.[0] ?< UserInitialIcon username={unoparty.players[0]} /> : "+"}</button>
     </div>
