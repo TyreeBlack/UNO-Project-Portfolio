@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck} from "@fortawesome/free-solid-svg-icons";
@@ -8,8 +9,9 @@ import {BrowserRouter, Routes, Route, NavLink} from "react-router-dom";
 import './App.css'
 import MainLobby from "./MainLobby"; 
 import UNOStore from "./UNOStore";
+import Profile from "./Profile";
 
-const socket = io("http://localhost:3001"); // connects to the server.js file
+const socket = io("http://localhost:3001"); // connects to the server_side.js file
 
 // listens for the connection event from the server side
 socket.on("connect", () => {
@@ -71,7 +73,7 @@ function App() {
         <label htmlFor="username" className="username_header">Enter username:</label>
         <input type="text" className="input_field" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="Enter username here" required={true}></input>      
         <label htmlFor="password" className="password_header">Create a password:</label>
-        <input type="password" className="password_field" placeholder="Ingnore this for now" required={true}></input>
+        <input type="password" className="password_field" name="password_value" placeholder="Ingnore this for now" required={true}></input>
         <NavLink to="/MainLobby" end><button type="submit" className="create-account" onClick={() => RegisterID(username)}>Create Account</button></NavLink>
         </div>
          <div className="UNO_Card">
@@ -93,6 +95,7 @@ function App() {
         />
         <Route path="/MainLobby" element={<MainLobby username={username} socket={socket} friends={friends} />} />
         <Route path="/UNOStore" element={<UNOStore username={username} socket={socket} friends={friends} />} />
+        <Route path="/Profile" element={<Profile username={username} socket={socket} friends={friends} />} />
       </Routes>
     </BrowserRouter>
     </>

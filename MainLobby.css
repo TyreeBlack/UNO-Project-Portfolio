@@ -1,5 +1,6 @@
 body {
     background-color: moccasin;
+    overflow-x: hidden;
 }
 
 .fa-envelope {
@@ -152,8 +153,8 @@ body {
     font-size: 35px;
     color: white;
     position: relative;
-    bottom: -40px;
-    left: -225px;
+    bottom: -25px;
+    right: -10px;
 }
 
 .fa-toggle-large-on {
@@ -526,9 +527,9 @@ h1 {
 }
 
 .notify_request_board {
-    background-color: green;
+    background:linear-gradient(rgb(12, 214, 12), rgb(20, 170, 20), lime);
     display: flex;
-    box-shadow: 0 0 4px gray, 0 0 4px gray;
+    box-shadow: inset 0 0 30px black;
     width: 540px;
     height: 120px;
     border-radius: 8px;
@@ -542,8 +543,8 @@ h1 {
     color: white;
     text-align: center;
     position: relative;
-    top: -5px;
-    left: -50px;
+    bottom: -15px;
+    right: -20px;
 }
 
 .active_tab_divider {
@@ -838,7 +839,7 @@ strong {
     background-color: gold;
     box-shadow: 0 0 4px white, 0 0 8px white;
     padding: 20px;
-    width: 1060px;
+    width: 1090px;
     height: 760px;
     border-radius: 8px;
     position: relative;
@@ -932,7 +933,7 @@ strong {
 
 .slot_container {
     background-color: transparent;
-    box-shadow: 0 0 4px black, 0 0 4px black;
+    box-shadow: 0 0 4px black, 0 0 8px black;
     width: 220px;
     height: 150px;
     border-radius: 12px;
@@ -944,7 +945,7 @@ strong {
 
 .slot_container_2 {
     background-color: transparent;
-    box-shadow: 0 0 4px black, 0 0 4px black;
+    box-shadow: 0 0 4px black, 0 0 8px black;
     width: 220px;
     height: 150px;
     border-radius: 12px;
@@ -956,7 +957,7 @@ strong {
 
 .slot_container_3 {
     background-color: transparent;
-    box-shadow: 0 0 4px black, 0 0 4px black;
+    box-shadow: 0 0 4px black, 0 0 8px black;
     width: 220px;
     height: 150px;
     border-radius: 12px;
@@ -968,7 +969,7 @@ strong {
 
 .slot_container_4 {
     background-color: transparent;
-    box-shadow: 0 0 4px black, 0 0 4px black;
+    box-shadow: 0 0 4px black, 0 0 8px black;
     width: 220px;
     height: 150px;
     border-radius: 12px;
@@ -981,14 +982,15 @@ strong {
 
 .create_room {
     background-color: red;
+    box-shadow: inset 0 0 10px black;
     font-size: 25px;
     color: white;
     width: 220px;
     padding: 20px;
-    border: 3px solid white;
-    border-radius: 10px;
+    border: 4px solid white;
+    border-radius: 20px;
     position: relative;
-    left: -160px;
+    right: -10px;
     bottom: -22px;
     cursor: pointer;
 }
@@ -1425,7 +1427,174 @@ background-color: blue;
     font-weight: normal;
 }
 
+.game_mode {
+    background:linear-gradient(rgb(230, 63, 63), crimson, crimson, rgb(212, 71, 71));
+    box-shadow: inset 0 0 20px black;
+    width: 320px;
+    padding: 30px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 42px;
+    border: 5px solid white;
+    position: relative;
+    top: -220px;
+    right: -150px;
+    cursor: pointer;
+}
 
+.game_mode_UI {
+    background:linear-gradient(rgb(167, 158, 158), rgb(148, 144, 144), rgb(155, 152, 152), gray, rgb(122, 120, 120), gray);
+    box-shadow: inset 0 0 40px black;
+    width: 1550px;
+    height: 820px;
+    border-radius: 32px;
+    position: relative;
+    top: -860px;
+}
+
+.casual {
+    color: white;
+    font-size: 65px;
+    position: relative;
+    left: -590px;
+    bottom: -50px;
+}
+
+.casual_button {
+    background:linear-gradient(yellow, gold, yellow, gold);
+    box-shadow: inset 0 0 10px black;
+    width: 450px;
+    height: 250px;
+    border-radius: 32px;
+    color: crimson;
+    font-size: 46px;
+    font-weight: bold;
+    position: relative;
+    left: -550px;
+    bottom: -473px;
+    cursor: pointer;
+}
+
+.wild_party_button {
+    background:linear-gradient(rgb(6, 89, 145), rgb(28, 83, 155), rgb(153, 21, 153), rgb(58, 5, 58));
+    box-shadow: inset 0 0 10px black;
+    width: 450px;
+    height: 250px;
+    border-radius: 32px;
+    color: gold;
+    font-size: 46px;
+    font-weight: bold;
+    position: relative;
+    left: -100px;
+    bottom: -224px;
+    cursor: pointer;
+}
+
+.wild_party_theme {
+    background:linear-gradient(rgb(6, 89, 145), rgb(28, 83, 155), rgb(153, 21, 153), rgb(58, 5, 58));
+    box-shadow: inset 0 0 40px black;
+    width: 1690px;
+    height: 920px;
+    border-radius: 32px;
+    position: relative;
+    top: -1680px;
+}
+
+.wild_header {
+    color: white;
+    font-size: 65px;
+    font-weight: bold;
+    position: relative;
+    left: -520px;
+}
+
+.wild_container {
+     background-color: transparent;
+    box-shadow: 0 0 4px black, 0 0 8px black;
+    width: 220px;
+    height: 170px;
+    border-radius: 12px;
+    position: relative;
+    margin: auto 80px;
+    bottom: -124px;
+    cursor: pointer;
+}
+
+.wild_container_2 {
+     background-color: transparent;
+    box-shadow: 0 0 4px black, 0 0 8px black;
+    width: 220px;
+    height: 170px;
+    border-radius: 12px;
+    position: relative;
+    margin: auto 340px;
+    top: -44px;
+    cursor: pointer;
+}
+
+.wild_container_3 {
+     background-color: transparent;
+    box-shadow: 0 0 4px black, 0 0 8px black;
+    width: 220px;
+    height: 170px;
+    border-radius: 12px;
+    position: relative;
+    margin: auto 600px;
+    top: -212px;
+    cursor: pointer;
+}
+
+.wild_container_4 {
+     background-color: transparent;
+    box-shadow: 0 0 4px black, 0 0 8px black;
+    width: 220px;
+    height: 170px;
+    border-radius: 12px;
+    position: relative;
+    margin: auto 860px;
+    top: -380px;
+    cursor: pointer;
+}
+
+.wild_overview {
+    background-color: transparent;
+    box-shadow: inset 0 0 10px black;
+    width: 472px;
+    height: 450px;
+    border-radius: 22px;
+    border: 4px solid black;
+    position: relative;
+    top: -750px;
+    right: -1180px;
+}
+
+.wild_overview_header {
+    color: white;
+}
+
+.wild_rules {
+    color: white;
+    font-weight: bold;
+    font-size: 27px;
+    text-shadow: 2px 2px black;
+    position: relative;
+    bottom: -50px;
+}
+.twovtwo_party_button {
+ background:linear-gradient(to right, cyan, cyan, crimson, crimson);
+box-shadow: inset 0 0 10px black;
+    width: 450px;
+    height: 250px;
+    border-radius: 32px;
+    color: white;
+    font-size: 46px;
+    font-weight:bold;
+    position: relative;
+    right: -350px;
+    top: -28px;
+    cursor: pointer;
+}
 
 .choose_map {
     color: white;
@@ -1435,14 +1604,15 @@ background-color: blue;
 
 .map_selection {
     background-color: blue;
+    box-shadow: inset 0 0 15px black;
     color: white;
     font-size: 23px;
     width: 270px;
     padding: 25px;
-    border: 4px solid white;
+    border: 6px solid white;
     border-radius: 22px;
     position: relative;
-    left: -20px;
+    left: -90px;
     bottom: -20px;
     cursor: pointer;
 }
@@ -1875,6 +2045,7 @@ background-color: blue;
 
 .readyup {
     background-color: red;
+    box-shadow: inset 0 0 10px black;
     font-size: 25px;
     color: white;
     width: 220px;
@@ -1883,7 +2054,7 @@ background-color: blue;
     border-radius: 10px;
     position: relative;
     bottom: -20px;
-    right: -120px;
+    right: -20px;
     cursor: pointer;
 }
 

@@ -1,32 +1,40 @@
  
 CREATE DATABASE IF NOT EXISTS (
-    use unoparty.db;
+    use unoparty;
 )
+
+-- creates a user from a specific host w/ random password 
+CREATE USER uno_backend@localhost IDENTIFIED BY 'stygyy-qwrggg-ttreewdf';
+
+-- grants privileges for a specific table in the database 
+GRANT SELECT, UPDATE ON unoparty.USERS TO uno_backend@localhost;
+
+CREATE TABLE IF NOT EXISTS USERS (
+    username INT NOT NULL PRIMARY_KEY AUTO_INCREMENT, 
+    partyTokens INT NOT NULL,
+    equip_inventory VARCHAR(260) NOT NULL,
+    friends VARCHAR(260) NOT NULL,
+    accept_friends VARCHAR(260) NOT NULL
+);
+
+INSERT INTO USERS(username, friends, partyTokens, equip_inventory, friends, accept_friends) VALUES
+(?, ?, ?, ?, ?, ?);
+
+
+UPDATE USERS 
 
 CREATE TABLE IF NOT EXISTS USERINFO (
     usernameID INT NOT NULL PRIMARY_KEY AUTO_INCREMENT,
     age INT NOT NULL,
+    password VARCHAR(266) NOT NULL,
     emailAddress VARCHAR(250) NOT NULL,
     accountCreated DATETIME NOT NULL,
     UNIQUE INDEX(emailAddress) emailAddress
 );
 
-INSERT INTO USERINFO(usernameID, age, emailAddress, accountCreated) VALUES 
-(?, ?, ?, 'yyyy-mm-dd hh:mi:ss')
+INSERT INTO USERINFO(usernameID, age, password, emailAddress, accountCreated) VALUES 
+(?, ?, ?, ?, 'yyyy-mm-dd hh:mi:ss');
 
-
-CREATE TABLE IF NOT EXISTS USERS (
-    username INT NOT NULL PRIMARY_KEY AUTO_INCREMENT, 
-    partyTokens INT NOT NULL,
-    friends VARCHAR(260) NOT NULL,
-    accept_friends VARCHAR(260) NOT NULL
-
-)
-
-INSERT INTO USERS(username, friends, accept_friends) VALUES
-(?, ?, ?, ?)
-
-UPDATE USERS 
 
 CREATE TABLE IF NOT EXISTS USERSTATS (
 usernameID INT NOT NULL PRIMARY_KEY AUTO_INCREMENT,
@@ -74,4 +82,10 @@ CREATE TABLE IF NOT EXISTS STATISTICS (
 );
 
 INSERT INTO STATISTICS(playerlevel, xpEarned, gamesPlayed, wins, losses, longest_win_streak) VALUES
-(?, ?, ?, ?, ?, >);
+(?, ?, ?, ?, ?);
+
+
+CREATE TABLE IF NOT EXISTS EQUIPED_CARDS (
+    equipCard INT NOT NULL PRIMARY_KEY AUTO_INCREMENT, 
+    username VARCHAR(260) NOT NULL
+);

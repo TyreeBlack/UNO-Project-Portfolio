@@ -34,7 +34,7 @@ import './MainLobby.css'
 import MainGame from "./MainGame";
 import UserInitialIcon from "./UserInitialIcon";
 import Confetti from "./assets/confetti.svg?react";
-import SquareBracket from "./assets/square-bracket.svg?react";
+
 
 import {NavLink} from "react-router-dom";
 
@@ -94,6 +94,10 @@ const[MinimizeSettingUI, setMinimizeSettingUI] = useState(false);
 
 const [NotifyPanel, setNotifyPanel] = useState(null);
 const [exitNotifyPanel, setExitNotifyPanel] = useState(false);
+
+const [GameMode, setGameMode] = useState(null);
+
+const [WildParty, setWildParty] = useState(null);
 
 const[StartGame, setStartGame] = useState(false);
 const[maxPlayer, setmaxPlayer] = useState(false);
@@ -335,7 +339,7 @@ return (
     <div className="sidebar_menu">
     <div className="sidebar_tab">
     </div>
-    < UserInitialIcon  username={username}/>
+    <NavLink to="/Profile" end>< UserInitialIcon username={username}/></NavLink>
     <div className="create_item">
     <h6 className="create_party_title" onClick={() => setActivePanel("party")}><FontAwesomeIcon icon={faHouse}></FontAwesomeIcon> Create party</h6><br></br>
     </div>
@@ -365,10 +369,48 @@ return (
     <button type className="increment_slot_4">{unoparty?.players?.[3] ? <UserInitialIcon username={unoparty.players[3]}/> : "+"}</button>
     </div>
     <button type="submit" className="create_room" onClick={createUnoParty}>Create Party</button>
+    <button type="button" className="game_mode" onClick={() => setGameMode("game_mode_UI")}>Game Mode</button>
     <button type="button" className="map_selection" onClick={() => setMapSelection("map_interface_selection")}>Map Selection</button>
     <button type="submit" className="readyup" onClick={() => HandleGameInitialization()}>Ready</button>
     <h1 className="player_limit">Maxmium Limit: {maxPlayer?.status || `0/${unoparty?.maxPlayers || 4}`}</h1>
     </div>
+    )}
+
+    {GameMode === "game_mode_UI" && (
+      <div className="game_mode_UI">
+      <div className="casual_mode">
+        <h1 className="casual">Casual</h1>
+        <button type="button" className="casual_button">CASUAL</button>
+        </div>
+      <div className="wild_party">
+        <button type="button" className="wild_party_button" onClick={() => setWildParty("wild_party_theme")}>WILD PARTY</button>
+      </div>
+      <div className="2v2_party">
+        <button type="button" className="twovtwo_party_button">2v2</button>
+      </div>
+      </div>
+    )}
+
+    {WildParty === "wild_party_theme" && (
+      <div className="wild_party_theme">
+      <h1 className="wild_header">WILD PARTY</h1>
+      <div className="wild_container">
+    <button type className="decrement_slot">{unoparty?.players?.[0] ?< UserInitialIcon username={unoparty.players[0]} /> : "+"}</button>
+    </div>
+      <div className="wild_container_2">
+    <button type className="increment_slot">{unoparty?.players?.[1] ?<UserInitialIcon username={unoparty.players[1]}/> : "+"}</button>
+    </div>
+    <div className="wild_container_3">
+    <button type className="increment_slot_3">{unoparty?.players?.[2] ? <UserInitialIcon username={unoparty.players[2]}/> : "+"}</button>
+    </div>
+    <div className="wild_container_4">
+    <button type className="increment_slot_4">{unoparty?.players?.[3] ? <UserInitialIcon username={unoparty.players[3]}/> : "+"}</button>
+    </div>
+      <div className="wild_overview">
+      <h1 className="wild_overview_header">OVERVIEW</h1>
+      <p className="wild_rules">This game mode is packed with fun, allowing you to utilize your godly cards and abilities. Only 1 may be equipped. Let's go <strong>WILD!</strong></p>
+      </div>
+      </div>
     )}
 
     {mapSelection === "map_interface_selection" && (

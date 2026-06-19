@@ -11,6 +11,7 @@ const io = new Server(server, {
 const UserMapID = new Map(); // a user map for storing connections
 const party_rooms = {}; // mutuable object for storing key pairs
 const stored_friends = {};
+const stored_inventory = {};
 
  card_deck = [ 
         {id: 1, color: "green", name: 6, description: "UNO Green Card"},
@@ -74,6 +75,7 @@ function generatePartyRoomCode(username) {
         currentCard: null,
         activeColor: null,     
         chosenColor: null,
+        reverseAnimation: null,
         colorSelectionPending: false,
         colorSelector: null,
         pendingSpecialFour: false,
@@ -454,6 +456,8 @@ console.log("roomcode: ", roomCode);
         console.log("Card being played: ", cardPlayed);
         // removes the card from players deck
         state.PlayHands[socket.username] = state.PlayHands[socket.username].filter(c => c.id !== cardPlayed.id);
+        console.log("After filter takes place: ", state.PlayHands[socket.username]);
+        console.log("Card Length: ", state.PlayHands[socket.username].length);
 
         if(cardPlayed.color === "black") {
             io.to(roomCode).emit("update_game_state", state);
@@ -469,24 +473,29 @@ console.log("roomcode: ", roomCode);
     if(state.PlayHands[socket.username] && state.PlayHands[socket.username].length === 0) {
         state.winCondition = true;
         state.winner = socket.username;
+
+        // receives everyone's hand
+        io.to(roomCode).emit("update_game_state", state);
         console.log(`${socket.username} has won the game!`);
 
+    setTimeout(() => {
     io.to(roomCode).emit("game_over", {
         winner: socket.username,
-        finalPlay: state.PlayHands
+        finalPlay: state.PlayHands    
     });
+}, 100);
     return;
-    }
+}
 
         // handling special card logic
         let skipNext = false;
-
     if(cardPlayed.name === "skip") {
         skipNext = true;
     }
     else if(cardPlayed.name === "reverse") {
         state.direction *= -1; // reverses the turn order
         if (players.length === 2) skipNext = true;
+    return;
     }
     // increments 2 draw cards to the player's hand
     else if(cardPlayed.name === "+2") {
