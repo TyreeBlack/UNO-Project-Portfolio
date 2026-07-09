@@ -35,10 +35,11 @@ import MainGame from "./MainGame";
 import UserInitialIcon from "./UserInitialIcon";
 import Confetti from "./assets/confetti.svg?react";
 
+import Crown from "./assets/crown.svg?react";
+import CrownLogo from "./assets/crown2.svg?react";
 import Pow from "./assets/pow.svg?react";
-
-import User from "./assets/user.svg?react";
-
+import BlueUser from "./assets/blueuser.svg?react";
+import RedUser from "./assets/reduser.svg?react";
 
 import {NavLink} from "react-router-dom";
 
@@ -102,6 +103,7 @@ const [exitNotifyPanel, setExitNotifyPanel] = useState(false);
 const [GameMode, setGameMode] = useState(null);
 
 const [WildParty, setWildParty] = useState(null);
+const [InventoryGUI, setInventoryGUI] = useState(null);
 
 const[StartGame, setStartGame] = useState(false);
 const[maxPlayer, setmaxPlayer] = useState(false);
@@ -386,6 +388,29 @@ return (
       <p className="choice_of_card">Whatever suits your vibe. We got it here.</p>
       <div className="casual_mode">
         <h1 className="casual">CASUAL</h1>
+        <div className="casual_card">
+        <h1 className="casual_top_title">1</h1>
+          <h1 className="casual_bottom_title">1</h1>
+          <div className="casual_circle">
+          <h1 className="casual_title">1</h1>
+        </div>
+        </div>
+
+        <div className="casual_card2">
+           <h1 className="casual_top_title2">0</h1>
+          <h1 className="casual_bottom_title2">0</h1>
+          <div className="casual_circle2">
+          <h1 className="casual_title2">0</h1>
+        </div>
+        </div>
+        <div className="casual_card3">
+         <h1 className="casual_top_title3">2</h1>
+          <h1 className="casual_bottom_title3">2</h1>
+          <div className="casual_circle3">
+             <h1 className="casual_title3">2</h1>
+        </div>
+        </div>
+
         <p className="casual_introduction">Enjoying UNO the traditional way. No crazy cards, just good vibes.</p>
         <button type="button" className="casual_button">PLAY CASUAL</button>
         </div>
@@ -393,14 +418,16 @@ return (
         <h1 className="wild_uno">WILD UNO</h1>
         <p className="wild_introduction">More crazy twists, choice of cards, the doom & despair of UNO Party.</p>
         <button type="button" className="wild_party_button" onClick={() => setWildParty("wild_party_theme")}>PLAY WILD UNO</button>
+        <CrownLogo className="wild_crown" />
       </div>
+
       <div className="team_party">
         <Pow className="pow"/>
-        <User className="user_1" />
-        <User className="user_2" />
         <h1 className="team_header">2v2</h1>
         <p className="team_introduction">Its a team based game in this pack edition. Choose wisely, collaborate, communicate and dominate the other team.</p>
         <button type="button" className="team_party_button"> PLAY 2v2</button>
+      <BlueUser className="blue_user" />
+      <RedUser className="red_user" />
       </div>
       </div>
     )}
@@ -423,10 +450,26 @@ return (
       <div className="wild_overview">
       <h1 className="wild_overview_header">OVERVIEW</h1>
       <p className="wild_rules">This game mode is packed with fun, allowing you to utilize your godly cards and abilities. Only 1 may be equipped. Let's go <strong>WILD!</strong></p>
+      <button type="button" className="equip_inv" onClick={() => setInventoryGUI("god_inventory")}>Equip Inventory</button>
+      <button type="button" className="ready_wild">Ready</button>
       </div>
+      <Crown className="crown_header" />
       </div>
     )}
 
+    {InventoryGUI === "god_inventory" && (
+      <div className="god_inventory">
+      <h1 className="inventory_header">INVENTORY</h1>
+      <h1 className="godly_title">Godly Cards</h1>
+      <div className="main_godly_selector">
+      <div className="godly_selection_1"></div>
+      <div className="godly_selection_2"></div>
+      <div className="godly_selection_3"></div>
+      <div className="godly_selection_4"></div>
+      </div>
+      <h1 className="inv_guideline">Only 1 Godly may be selected.</h1>
+      </div>
+    )}
     {mapSelection === "map_interface_selection" && (
       <div className="map_interface_selection">
       <h1 className="choose_map">Choose A Map:</h1>

@@ -20,13 +20,21 @@ import {faHouse,
         faEye, 
         faSpiral, 
         faBolt,
-        faMagnet, 
-        faShield
+        faMagnet
 } 
        from  "@fortawesome/free-solid-svg-icons";
 
 import './store.css'
-
+import Shield from "./assets/shield.svg?react";
+import Clover from "./assets/clover.svg?react";
+import Coins from "./assets/gold_coin.svg?react";
+import Bolt from "./assets/bolt.svg?react";
+import Ghost from "./assets/ghost.svg?react";
+import Skull from "./assets/skull.svg?react";
+import WhirlPool from "./assets/whirlpool.svg?react";
+import PhaseBolt from "./assets/phasebolt.svg?react";
+import Poof from "./assets/speechbubble.svg?react";
+import Star from "./assets/star.svg?react";
 
 function UNOStore({username, socket, friends}) {
 
@@ -271,11 +279,88 @@ return (
     </div>
     <h1 className="godly">Godly: 5%</h1>
     <div className="deflect_card"> 
-    <FontAwesomeIcon icon={faShield} className="fa-shield"></FontAwesomeIcon>
+    <Shield className="shield_icon" />
+    <div className="deflect_bottom"></div>
+     <div className="deflect_top"></div>
     </div>
     </div>
 )}
 
+
+{previewPack6 === "preview_interface_6" && (
+    <div className="preview_interface_6" onMouseEnter={() =>  setPreviewPack6("preview_interface_6")} onMouseLeave={() => setPreviewPack6("")}>
+          <h1 className="pack_content">Pack Contents</h1>
+    <div className="common_preview"></div>
+    <h1 className="common">Common: 50%</h1>
+    <div className="uncommon_preview"></div>
+    <h1 className="uncommon">Uncommon: 30%</h1>
+    <div className="rare_preview"></div>
+    <h1 className="rare">Rare: 25%</h1>
+    <div className="godly_preview">
+    <h1 className="mystery">??</h1>
+    </div>
+    <h1 className="godly">Godly: 5%</h1>
+    </div>
+)}
+
+
+{previewPack7 === "preview_interface_7" && (
+    <div className="preview_interface_7" onMouseEnter={() =>  setPreviewPack7("preview_interface_7")} onMouseLeave={() => setPreviewPack7("")}>
+          <h1 className="pack_content">Pack Contents</h1>
+    <div className="common_preview"></div>
+    <h1 className="common">Common: 50%</h1>
+    <div className="uncommon_preview"></div>
+    <h1 className="uncommon">Uncommon: 30%</h1>
+    <div className="rare_preview"></div>
+    <h1 className="rare">Rare: 25%</h1>
+    <div className="godly_preview">
+    <h1 className="mystery">??</h1>
+    </div>
+    <h1 className="godly">Godly: 5%</h1>
+    <div className="luck_card">
+    <div className="lucky_top"><Clover className="clover_top" /></div>
+     <div className="lucky_bottom"><Clover className="clover_bottom" /></div>
+    <Clover className="main_clover" />
+    <Coins className="coin_1" />
+    <Coins className="coin_2" />
+    <Coins className="coin_3" />
+    <Coins className="coin_4" />
+    <Bolt className="bolt_1" />
+    <Bolt  className="bolt_2" />
+    </div>
+    </div>
+)}
+
+{previewPack8 == "preview_interface_8" && (
+    <div className="preview_interface_8" onMouseEnter={() => setPreviewPack8("preview_interface_8")} onMouseLeave={() => setPreviewPack8("")}>
+        <h1 className="pack_content">Pack Contents</h1>
+    <div className="common_preview"></div>
+    <h1 className="common">Common: 50%</h1>
+    <div className="uncommon_preview"></div>
+    <h1 className="uncommon">Uncommon: 30%</h1>
+    <div className="rare_preview"></div>
+    <h1 className="rare">Rare: 25%</h1>
+    <div className="godly_preview">
+    <h1 className="mystery">??</h1>
+    </div>
+    <h1 className="godly">Godly: 5%</h1>
+    <div className="phase_card">
+    <h1 className="phase_title">PHASE<br></br>
+    <span>O</span> 
+    <span>U</span> 
+    <span>T</span> 
+    <span>!</span>
+    </h1>
+    
+    </div>
+    <Ghost className="ghost_icon" />
+    <Skull className="skull_icon" />
+    <WhirlPool className="whirlpool_icon" />
+    <PhaseBolt className="phase_bolt" />
+    <Poof className="poof_icon" /><h1 className="poof_title">POOF!</h1>
+    <Star className="star_icon"/><h1 className="star_title">NOPE!</h1>
+    </div>
+)}
 {payState === "paymentWall" && (
     <form action="payment.php" method="POST" className="paymentWall">
     

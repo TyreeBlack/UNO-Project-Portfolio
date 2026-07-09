@@ -13,6 +13,8 @@ from "@fortawesome/free-solid-svg-icons";
 import './MainGame.css'
 import UserInitialIcon  from './UserInitialIcon';
 
+import VictoryRibbon from "./assets/ribbon.svg?react";
+
 function MainGame({username, players, socket, roomCode, initialGameState}) {
     
     console.log("Main Game Player: ", username);
@@ -32,9 +34,8 @@ function MainGame({username, players, socket, roomCode, initialGameState}) {
     const [isCardRevealed, setCardRevealed] = useState(false);
 
     const [ColorWheel, setColorWheel] = useState(false);
-    const [HandOnShoulderMeme, setHandOnShoulderMeme] = useState(false);
 
-    
+    const [DefeatBoard, setDefeatBoard] = useState(null);
 
     const [Winner, setWinner] = useState(null);
 
@@ -218,14 +219,15 @@ useEffect(() => {
     </div>
        )}   
     </div>
-    <button type="submit" className="UNO_Button" onClick={() => { setXPBoard("XP"), setWinner(gameEnded.winner)}}>UNO!</button>
+    <button type="submit" className="UNO_Button" onClick={() => { setXPBoard("XP"); setWinner(gameEnded.winner); console.log({
+        winner: gameEnded.winner, username 
+    }); }}>UNO!</button>
     </div>
 
 
-    {XPBoard === "XP" && !MinimizeXPBoard && (
+    {Winner === username && XPBoard === "XP" && !MinimizeXPBoard && (
 
     <div className="XP_Board_Container">
-    <div className="victory_banner">
      <h1 className="victory"><span>V</span>
                             <span>I</span>
                             <span>C</span>
@@ -234,7 +236,6 @@ useEffect(() => {
                             <span>R</span>
                             <span>Y</span>
                             <span>!</span></h1>
-    </div>
     <div className="won_banner">
     <h1 className="winner">YOU WON!</h1>
     </div>
@@ -251,7 +252,14 @@ useEffect(() => {
     <h6 className="credits_earned">Credits Earned:</h6>
     <button type="button" className="Return" onClick={() => setReturnLobby("lobby")}>RETURN</button>
     <button type="button" className="play_again">PLAY AGAIN</button>
+    <VictoryRibbon className="victory_ribbon" />
     </div>
+    )}
+
+    {Winner !== username && XPBoard === "XP" && !MinimizeXPBoard && (
+        <div className="defeat_board">
+            HELLO
+        </div>
     )}
     
     <div className="player_zone">
@@ -279,10 +287,7 @@ useEffect(() => {
        <div className="draw_4_logo_green"></div>
        <div className="draw_4_logo_yellow"></div>
     </>
-    )}
-    {HandOnShoulderMeme && (
-        <img src={YourCooked}/>
-    )}
+    )} 
     {
     items.name === "skip" && (
      <>

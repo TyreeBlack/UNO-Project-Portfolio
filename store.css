@@ -4,14 +4,17 @@ body {
 }
 
 .navigation_bar {
-    background-color: rgb(233, 210, 79);
+    display: flex;
+    background-color:gold;
     box-shadow: 0 0 4px gray, 0 0 4px gray;
     display: flex;
     width: 1400px;
     height: 125px;
     line-height: 50px;
+    border-radius: 22px;
     position: relative;
-    top: -430px;
+    top: -630px;
+    left: -300px;
     overflow: visible;
 }
 
@@ -93,7 +96,7 @@ body {
     border-radius: 22px;
     position: relative;
     top: -7400px;
-    left: -50px;
+    left: -70px;
     z-index: 6;
 }
  .spotlight {
@@ -139,15 +142,24 @@ body {
     background:linear-gradient(darkred, red, darkred);
 }
 
+.starter_pack {
+    background-image:linear-gradient(to top, black, black, crimson,  crimson);
+    color: transparent;
+    font-size: 45px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
 .uno_container {
     background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+    box-shadow: inset 0 0 20px black;
     width: 540px;
     height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    left: -200px;
-    bottom: -140px;
+    left: -600px;
+    bottom: -80px;
 }
 
 .preview_pack {
@@ -188,8 +200,8 @@ body {
     font-weight: bold;
     color: gold;
     position: relative;
-    bottom: -20px;
-    right: -160px;
+    bottom: -220px;
+    right: -220px;
     cursor: pointer;
 }
 
@@ -233,8 +245,8 @@ body {
     font-weight: bold;
     color: gold;
     position: relative;
-    bottom: -20px;
-    right: -160px;
+    bottom: -220px;
+    right: -220px;
     cursor: pointer;
 }
 
@@ -248,8 +260,78 @@ body {
     font-weight: bold;
     color: gold;
     position: relative;
-    bottom: -20px;
-    right: -160px;
+    bottom: -220px;
+    right: -220px;
+    cursor: pointer;
+}
+
+.preview_pack_8 {
+    background:linear-gradient(rgb(93, 93, 95), black, rgb(71, 71, 73));
+    width: 180px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    position: relative;
+    bottom: -220px;
+    right: -220px;
+    cursor: pointer;
+}
+
+.preview_pack_9 {
+    background:linear-gradient(rgb(93, 93, 95), black, rgb(71, 71, 73));
+    width: 180px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    position: relative;
+    bottom: -220px;
+    right: -220px;
+    cursor: pointer;
+}
+
+.preview_pack_10 {
+    background:linear-gradient(rgb(93, 93, 95), black, rgb(71, 71, 73));
+    width: 180px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    position: relative;
+    bottom: -220px;
+    right: -220px;
+    cursor: pointer;
+}
+
+.preview_pack_11 {
+    background:linear-gradient(rgb(93, 93, 95), black, rgb(71, 71, 73));
+    width: 180px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    position: relative;
+    bottom: -220px;
+    right: -220px;
+    cursor: pointer;
+}
+
+.preview_pack_12 {
+    background:linear-gradient(rgb(93, 93, 95), black, rgb(71, 71, 73));
+    width: 180px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    position: relative;
+    bottom: -220px;
+    right: -220px;
     cursor: pointer;
 }
 
@@ -438,13 +520,13 @@ body {
 
 .uno_container_2 {
     background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+     box-shadow: inset 0 0 20px black;
     width: 540px;
     height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -450px;
-    top: -540px;
+    right: -50px;
+    top: -600px;
 }
 
 .preview_interface_2 {
@@ -531,13 +613,13 @@ body {
 
 .uno_container_3 {
     background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+    box-shadow: inset 0 0 20px black;
     width: 520px;
     height: 680px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -1100px;
-    top: -1225px;
+    right: -650px;
+    top: -1285px;
 }
 
 .preview_interface_3 {
@@ -546,8 +628,8 @@ body {
     height: 500px;
     border-radius: 22px;
     position: relative;
-    top: -7090px;
-    right: -1140px;
+    top: -7490px;
+    right: -650px;
     z-index: 4;
 }
 
@@ -770,13 +852,13 @@ body {
 
 .uno_container_4 {
     background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+    box-shadow: inset 0 0 20px black;
      width: 540px;
     height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    left: -210px;
-    top: -885px;
+    left: -610px;
+    top: -1085px;
 }
 
 .preview_interface_4 {
@@ -785,8 +867,8 @@ body {
     height: 500px;
     border-radius: 22px;
     position: relative;
-    top: -6200px;
-    left: -200px;
+    top: -6600px;
+    left: -600px;
     z-index: 4;
 }
 
@@ -901,13 +983,13 @@ body {
 
 .uno_container_5 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+     box-shadow: inset 0 0 20px black;
     width: 540px;
     height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -420px;
-    top: -1564px;
+    right: -40px;
+    top: -1764px;
 }
 
 .preview_interface_5 {
@@ -924,7 +1006,7 @@ body {
 .deflect_card {
     background:linear-gradient(darkred, crimson, darkred);
     box-shadow: inset 0 0 110px black;
-    width: 220px;
+    width: 200px;
     height: 290px;
     border-radius: 22px;
     border: 6px solid white;
@@ -932,107 +1014,423 @@ body {
     top: -210px;
 }
 
-.fa-shield {
-    background:linear-gradient(black);
-    color: transparent;
-  -webkit-text-fill-color: transparent; 
-    font-size: 85px;
-     background-clip: text;
-  -webkit-background-clip: text;
-  border: 4px solid white;
+.deflect_top {
+    background-color: green;
+    width: 400px;
+    height: 450px;
+    z-index: 4;
+}
+
+.shield_icon {
+    width: 150px;
     position: relative;
-    bottom: -90px;
+    top: -660px;
+    right: -22px;
 }
 
 .uno_container_6 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+     box-shadow: inset 0 0 20px black;
     width: 520px;
-    height: 590px;
+    height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -1130px;
-    top: -2054px;
+    right: -650px;
+    top: -2454px;
 }
 
 .uno_container_7 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
-    width: 520px;
-    height: 590px;
+     box-shadow: inset 0 0 20px black;
+    width: 550px;
+    height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    left: -30px;
-    top: -1924px;
+    left: -630px;
+    top: -2324px;
+}
+
+.preview_interface_7 {
+    background:linear-gradient(gray, black, gray);
+    width: 520px;
+    height: 500px;
+    border-radius: 22px;
+    position: relative;
+    top: -6370px;
+    left: -612px;
+    z-index: 4;
+}
+
+.luck_card {
+    background:linear-gradient(rgb(43, 41, 41), rgb(43, 39, 39), rgb(44, 41, 41));
+    box-shadow: inset 0 0 40px black;
+    width: 179px;
+    height: 270px;
+    border-radius: 22px;
+    border: 5px solid tan;
+    filter: 
+    drop-shadow(0 0 12px gold)
+    drop-shadow(0 0 8px lime);
+}
+
+.main_clover {
+    width: 115px;
+    filter: 
+    drop-shadow(0 0 7px white)
+    drop-shadow(0 0 5px white);
+    position: relative;
+    top: -730px;
+    right: -30px;
+}
+
+.coin_1 {
+    width: 50px;
+    animation:spinningCoin 4s  linear infinite;
+    position:  relative;
+    top: -1550px;
+}
+
+@keyframes spinningCoin {
+    from {
+        transform: rotate(0deg) translateX(60px);
+    }
+    to {
+        transform: rotate(360deg) translateX(60px);
+    }
+}
+.lucky_top {
+    background:linear-gradient(rgb(36, 34, 34), rgb(32, 31, 31), black);
+    box-shadow: inset 0 0 20px black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid purple;
+    position: relative;
+    right: -4px;
+    bottom: -6px;
+}
+
+.coin_2 {
+    width: 50px;
+    animation: spinningCoin2 4s linear infinite;
+    position: relative;
+    top: -2002px;
+    right: -120px;
+}
+
+@keyframes spinningCoin2 {
+    from {
+        transform: rotate(0deg) translateX(60px);
+    }
+    to {
+        transform: rotate(360deg) translateX(60px);
+    }
+}
+
+
+.coin_3 {
+    width: 50px;
+    animation: spinningCoin3 4s linear infinite;
+    position: relative;
+    top: -2270px;
+    right: -25px;
+}
+
+@keyframes spinningCoin3 {
+    from {
+        transform: rotate(0deg) translateX(60px);
+    }
+    to {
+        transform: rotate(-360deg) translateX(60px);
+    }
+}
+
+.coin_4 {
+    width: 50px;
+    animation: spinningCoin4 4s linear infinite;
+    position: relative;
+    top: -2350px;
+    right: -95px;
+}
+
+@keyframes spinningCoin4 {
+    from {
+        transform: rotate(0deg) translateX(60px);
+    }
+    to {
+        transform: rotate(-360deg) translateX(60px);
+    }
+}
+
+.bolt_1 {
+    width: 40px;
+    position: relative;
+    top: -3284px;
+    right: -15px;
+    transform: rotate(20deg);
+}
+
+.bolt_2 {
+width: 40px;
+position: relative;
+top: -5055px;
+right: -120px;
+transform: rotate(20deg);
+
+}
+
+
+
+.clover_top {
+    width: 21px;
+    position: relative;
+    top: -790px;
+}
+
+.clover_bottom {
+    width: 21px;
+    position: relative;
+    top: -788px;
+}
+
+
+.lucky_bottom {
+    background:linear-gradient(rgb(36, 34, 34), rgb(32, 31, 31), black);
+    box-shadow: inset 0 0 20px black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid purple;
+    position: relative;
+    right: -134px;
+    bottom: -189px;
+}
+
+
+.luck_circle {
+    background-color: transparent;
+    width: 80px;
+    height: 292px;
+    border: 6px solid lime;
+    border-radius: 50%;
+    transform:rotate(32deg);
+    position: relative;
+    top: -45px;
+    right: -47px;
+}
+
+.clover_icon {
+    color: green;
+    font-size: 55px;
+    position: relative;
+    bottom: -90px;
+    transform:rotate(55deg);
 }
 
 .uno_container_8 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
-    width: 520px;
-    height: 590px;
+     box-shadow: inset 0 0 20px black;
+    width: 540px;
+    height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -540px;
-    top: -2510px;
+    right: -10px;
+    top: -3000px;
 }
+
+.preview_interface_8 {
+    background:linear-gradient(gray, black, gray);
+    width: 520px;
+    height: 500px;
+    border-radius: 22px;
+    position: relative;
+    top: -6770px;
+    right: -22px;
+    z-index: 4;
+}
+
+.phase_card {
+    background:linear-gradient(rgb(22, 128, 128), teal, rgb(3, 49, 49));
+    box-shadow: inset 0 0 20px black;
+    filter: 
+    drop-shadow(0 0 8px teal)
+    drop-shadow(0 0 10px rgb(4, 58, 58));
+    width: 170px;
+    height: 280px;
+    border-radius: 22px;
+    border: 6px solid wheat;
+    position: relative;
+    top: -720px;
+}
+
+.phase_title {
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 24px;
+    text-shadow: 3px 3px black;
+    position: relative;
+    bottom: -10px;
+}
+
+.phase_title span {
+    color: teal;
+}
+
+.ghost_icon {
+    width: 120px;
+    filter:
+    drop-shadow(0 0 7px black)
+    drop-shadow(0 0 8px black);
+    animation: ghostAnimate 4s ease-in-out infinite alternate;
+    position: relative;
+    top: -1640px;
+    right: -20px;
+    z-index: 3;
+}
+
+@keyframes ghostAnimate {
+    from {
+        transform: translateX(0) rotate(0deg);
+    }
+    to {
+        transform: translateX(40px) rotate(0deg);
+    }
+}
+
+.skull_icon {
+    width: 40px;
+    filter: 
+    drop-shadow(4px 4px black);
+    position: relative;
+    top: -3227px;
+    right: -15px;
+    transform: rotate(-25deg);
+    z-index: 2;
+}
+
+.whirlpool_icon {
+width: 155px;
+filter:
+drop-shadow(0 0 4px white)
+drop-shadow(0 0 4px teal);
+ position: relative;
+ top: -4850px;   
+ right: -10px;
+ z-index: 1;
+}
+
+.phase_bolt {
+    width: 32px;
+    filter:
+    drop-shadow(4px 4px black);
+    position: relative;
+    top: -6354px;
+    right: -20px;
+    transform:rotate(-50deg);
+}
+
+.poof_icon {
+    width: 70px;
+    filter: 
+    drop-shadow(4px 4px black);
+    position: relative;
+    top: -8100px;
+    right: -10px;
+    z-index: 3;
+}
+
+.poof_title {
+    color: black;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 12px;
+    position: relative;
+    top: -8910px;
+    left: -215px;
+    z-index: 4;
+}
+
+.star_icon {
+    width: 30px;
+    filter: 
+    drop-shadow(4px 4px black);
+    position: relative;
+    top: -9789px;
+    right: -127px;
+    z-index: 3;
+}
+
+.star_title {
+    color: black;
+    font-size: 5px;
+    font-weight: bold;
+    position: relative;
+    top: -10590px;
+    left: -118px;
+    z-index: 3;
+}
+
+
+
 
 .uno_container_9 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+     box-shadow: inset 0 0 20px black;
     width: 520px;
-    height: 590px;
+    height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -1110px;
-    top: -3100px;
+    right: -610px;
+    top: -3690px;
 }
 
 .uno_container_10 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+     box-shadow: inset 0 0 20px black;
     width: 520px;
-    height: 590px;
+    height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    left: -30px;
-    top: -3000px;
+    left: -630px;
+    top: -3590px;
 }
 
 .uno_container_11 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+     box-shadow: inset 0 0 20px black;
     width: 520px;
-    height: 590px;
+    height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -540px;
-    top: -3590px;
+    left: -40px;
+    top: -4280px;
 }
 
 .uno_container_12 {
      background:linear-gradient(lightblue, rgb(125, 201, 226), lightblue);
-    box-shadow: 0 0 4px black, 0 0 8px black;
+     box-shadow: inset 0 0 20px black;
     width: 520px;
-    height: 590px;
+    height: 690px;
     border-radius: 100% / 80px;
     position: relative;
-    right: -1120px;
-    top: -4175px;
+    right: -610px;
+    top: -4965px;
 }
 
 
 .btn-submit {
     background:linear-gradient(yellow, gold, gold);
+    box-shadow: inset 0 0 10px black;
     border-radius: 32px;
-    border: 2px solid white;
+    border: 4px solid white;
     padding: 20px;
     color: red;
-    font-size: 21px;
+    font-family: 'Fluffy Bubbles', cursive;
+    font-size: 29px;
     font-weight: bold;
-    width: 220px;
+    text-shadow: 2px 2px white;
+    width: 300px;
     position: relative;
-    bottom: -190px;
+    bottom: -160px;
     cursor: pointer;
 }
 
@@ -1041,16 +1439,21 @@ body {
 }
 
 .btn-submit-two {
-    background:linear-gradient(yellow, gold, gold);
+   background:linear-gradient(yellow, gold, gold);
+    box-shadow: inset 0 0 10px black;
     border-radius: 32px;
-    border: 2px solid white;
+    border: 4px solid white;
     padding: 20px;
     color: red;
-    font-size: 21px;
+    font-family: 'Fluffy Bubbles', cursive;
+    font-size: 29px;
     font-weight: bold;
-    width: 220px;
+    text-shadow: 2px 2px white;
+    width: 300px;
+    animation: GoofyButton 4s linear infinite;
     position: relative;
-    bottom: -430px;
+    left: -70px;
+    bottom: -460px;
     cursor: pointer;
 }
 
@@ -1059,17 +1462,20 @@ body {
 }
 
 .btn-submit-three {
-    background:linear-gradient(yellow, gold, gold);
+   background:linear-gradient(yellow, gold, gold);
+    box-shadow: inset 0 0 10px black;
     border-radius: 32px;
-    border: 2px solid white;
+    border: 4px solid white;
     padding: 20px;
     color: red;
-    font-size: 21px;
+    font-family: 'Fluffy Bubbles', cursive;
+    font-size: 29px;
     font-weight: bold;
-    width: 220px;
+    text-shadow: 2px 2px white;
+    width: 300px;
     position: relative;
-    right: -10px;
-    bottom: -420px;
+    left: -72px;
+    bottom: -450px;
     cursor: pointer;
 }
 

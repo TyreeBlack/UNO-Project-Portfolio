@@ -898,8 +898,8 @@ h4 {
 }
 
 .UNO_Button {
-    background-color: red;
-    box-shadow: 0 0 2px #fff, 0 0 2px #fff;
+    background:linear-gradient(rgb(177, 33, 33), rgb(172, 13, 45), crimson, rgb(136, 7, 7));    
+    box-shadow: inset 0 0 10px black;
     font-size: 36px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
@@ -915,26 +915,8 @@ h4 {
 }
 
 .UNO_Button:hover {
-    background-color: darkred;
+    background:linear-gradient(darkred);
 }
-
-.victory_banner {
-    background:linear-gradient(yellow, gold, gold);
-    box-shadow: inset 0 0 22px black;
-    border: 6px solid black;
-
-    filter: 
-    drop-shadow(0 0 10px gold)
-    drop-shadow(0 0 8px gold);
-    width: 1320px;
-    padding: 30px;
-    border-radius: 24px;
-    position: relative;
-    left: -160px;
-
-    transform:skewX(3deg);
-}
-
 
 .victory span:nth-child(1) {
     color: red;
@@ -1046,20 +1028,12 @@ h4 {
 }
 
 .victory span:nth-child(7) {
-    color: magenta;
-     -webkit-text-stroke: 2px white;
-    text-shadow:
-    2px 2px 0 black,
-    3px 3px 0 black,
-    4px 4px 0 black, 
-    5px 5px 0 black,
-    6px 6px 0 black,
-    7px 7px 0 black, 
-    8px 8px 0 black, 
-    9px 9px 0 black,
-    10px 10px 0 black,
-    11px 11px 0 black,
-    12px 12px 0 black;
+    font-family: 'Roboto', sans-serif;
+    background:linear-gradient(to top,purple, magenta);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 100px;
 }
 
@@ -1082,6 +1056,15 @@ h4 {
     transform:rotate(-30deg);
 }
 
+.victory_ribbon {
+    width: 1820px;
+    padding: 6px;
+    position: relative;
+    top: -1890px;
+    left: -390px;
+    z-index: -1;
+}
+
 .won_banner {
     background:linear-gradient(rgb(10, 99, 172), rgb(17, 174, 226), blue);
     box-shadow: inset 0 0 20px black;
@@ -1090,6 +1073,9 @@ h4 {
     drop-shadow(0 0 10px white);
     padding: 20px;
     border-radius: 22px;
+    z-index: -1;
+    position: relative;
+    top: -50px;
 }
 
 .winner {
@@ -1100,10 +1086,11 @@ h4 {
 
 .XP_Board_Container {
     background:linear-gradient(blue, darkblue, blue);
-    box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 40px black;
     width: 1040px;
     height: 1500px;
     border-radius: 32px;
+    border: 5px solid white;
     position: relative;
     right: -160px;
     top: -1320px;
@@ -1175,6 +1162,14 @@ h4 {
     position: relative;
     left: -310px;
     top: -50px;
+}
+
+.defeat_board {
+    background-color: red;
+    width: 4430px;
+    height: 4650px;
+    position: relative;
+    top: -300px;
 }
 
 .Return {

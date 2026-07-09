@@ -1,9 +1,9 @@
 
 <?php 
 
-
-
+class PaymentImplementation {
 function HandlingUserTransaction() {
+
 $full_name = INPUT_POST['full_name'];
 if(empty($full_name)) {
     echo "A name is required for processing payment.";
@@ -26,7 +26,15 @@ else {
     echo "Must be numeric values.";
 }
 
-$payment_transaction = fopen("transaction.txt", "w")
+// opens a file  in write mode
+$payment_transaction = fopen("transaction.txt", "w") or die("Error Occured: Unable to open file or file does not exist.");
+
+// writes to the file
+echo fwrite($payment_transaction, "This file is specifically being written for payment transactions.");
+
+// closing the file created.
+fclose($payment_transaction);
+
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -50,6 +58,8 @@ $mail->send();
 }
 catch(Exception e) {
 echo 'Error Occured: Email could not be send or Email address does not exist';
+}
+
 }
 ?>
 

@@ -248,8 +248,8 @@ body {
     width: 80px;
     height: 30px;
     position: relative;
-    top: -27px;
-    right: -9px;
+    top: -35px;
+    right: -7px;
     transform:rotate(-90deg);
     z-index: 4;
 }
@@ -262,8 +262,8 @@ body {
     border: 4px solid white;
     border-radius: 12px;
     position: relative;
-    top: -112px;
-    right: -75px;
+    top: -132px;
+    right: -79px;
    
 }
 
@@ -279,7 +279,7 @@ body {
     font-size: 30px;
     margin: auto 475px;
     position: relative;
-    top: -61px;
+    top: -71px;
     z-index: 4;
 }
 
@@ -300,10 +300,10 @@ body {
     background-color: red;
     box-shadow: 0 0 2px white, 0 0 2px white;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 25px;
     color: white;
     padding: 8px;
-    width: 160px;
+    width: 190px;
     height: 80px;
     border: 3px solid white;
     border-radius: 15px;
@@ -321,14 +321,15 @@ body {
     background-color: gold;
     box-shadow: 0 0 4px gray, 0 0 4px gray;
     display: flex;
-    width: 1999px;
-    padding: 35px;
+    width: 2000px;
+    padding: 40px;
+    border-radius: 22px;
     margin: 0;
     align-items: center;
     line-height: 1lvw;
     position: relative;
-    top: -450px;
-    right: -50px;
+    top: -650px;
+    left: -310px;
     overflow: visible;
 }
 
@@ -775,14 +776,15 @@ strong {
 }
 
 .subscribe {
-    background:linear-gradient(green, lime, rgb(32, 131, 32));
-    box-shadow: 0 0 4px black, 0 0 8px black;
+    background:linear-gradient(green, lime, rgb(32, 153, 32));
+    box-shadow:inset 0 0 18px black;
     width: 390px;
-    padding: 20px;
+    padding: 35px;
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 29px;
     border-radius: 12px;
+    border: 4px solid black;
     cursor: pointer;
     position: relative;
     left: -10px;
@@ -1448,7 +1450,8 @@ background-color: blue;
     height: 1150px;
     border-radius: 32px;
     position: relative;
-    top: -860px;
+    left: -270px;
+    top: -920px;
 }
 
 .game_choice {
@@ -1470,10 +1473,12 @@ background-color: blue;
     color: white;
     font-size: 65px;
     font-weight: bold;
+    text-shadow: 6px 6px black;
     font-family: 'Sour Gummy', cursive;
     position: relative;
     left: -20px;
-    bottom: -30px;
+    bottom: -190px;
+    z-index: 3;
 }
 
 .casual_mode {
@@ -1498,7 +1503,147 @@ background-color: blue;
     text-shadow: none;
     font-size: 25px;
     position: relative;
-    bottom: -50px;
+    top: -380px;
+}
+
+.casual_card {
+    background-color: red;
+    box-shadow: 0 0 20px black;
+    width: 150px;
+    height: 210px;
+    border-radius: 22px;
+    border: 6px solid white;
+    position: relative;
+    top: -70px;
+    right: -290px;
+    z-index: 2;
+    transform:rotate(20deg);
+}
+
+.casual_title {
+    color: white;
+    font-size: 35px;
+    transform: rotate(60deg);
+}
+
+.casual_top_title {
+    color: white;
+    position: relative;
+    bottom: -10px;
+    left: -40px;
+}
+
+.casual_bottom_title {
+    color: white;
+    position: relative;
+    bottom: -110px;
+    right: -50px;
+}
+
+
+.casual_circle {
+background-color: transparent;
+width: 235px;
+height: 60px;
+border-radius: 50%;
+border: 6px solid white;
+transform: rotate(-57deg);
+position: relative;
+left: -49px;
+top: -11px;
+}
+
+
+.casual_card2 {
+    background-color: green;
+    box-shadow: inset 0 0 20px black;
+    width: 150px;
+    height: 210px;
+    border-radius: 22px;
+    border: 6px solid white;
+    position: relative;
+    top: -275px;
+    right: -100px;
+    z-index: 1;
+    transform:rotate(-29deg);
+}
+
+.casual_top_title2 {
+    color: white;
+    position: relative;
+    bottom: -10px;
+    left: -50px;
+}
+
+.casual_bottom_title2 {
+    color: white;
+    position: relative;
+    bottom: -110px;
+    right: -50px;
+}
+
+.casual_circle2 {
+background-color: transparent;
+width: 235px;
+height: 60px;
+border-radius: 50%;
+border: 6px solid white;
+transform: rotate(-57deg);
+position: relative;
+left: -49px;
+top: -21px;
+}
+
+.casual_title2 {
+    color: white;
+    font-size: 35px;
+    transform: rotate(55deg);
+}
+
+.casual_card3 {
+    background-color: blue;
+    box-shadow: inset 0 0 20px black;
+    width: 150px;
+    height: 210px;
+    border-radius: 22px;
+    border: 6px solid white;
+    position: relative;
+    top: -498px;
+    right: -180px;
+    z-index: 1;
+    transform:rotate(-10deg);
+}
+
+.casual_title3 {
+    color: white;
+    font-size: 35px;
+    transform: rotate(55deg);
+}
+
+.casual_top_title3 {
+    color: white;
+    position: relative;
+    bottom: -10px;
+    left: -50px;
+}
+
+.casual_bottom_title3 {
+    color: white;
+    position: relative;
+    bottom: -110px;
+    right: -50px;
+}
+
+.casual_circle3 {
+background-color: transparent;
+width: 235px;
+height: 60px;
+border-radius: 50%;
+border: 6px solid white;
+transform: rotate(-57deg);
+position: relative;
+left: -49px;
+top: -21px;
 }
 
 .casual_button {
@@ -1512,7 +1657,7 @@ background-color: blue;
     color: crimson;
     border: 5px solid white;
     position: relative;
-    bottom:-370px;
+    top:-290px;
     cursor: pointer;
 }
 
@@ -1522,7 +1667,7 @@ background-color: blue;
     width: 590px;
     height: 710px;
     border-radius: 32px;
-    border: 5px solid black;
+    border: 5px solid white;
     color: gold;
     font-size: 46px;
     font-weight: bold;
@@ -1563,24 +1708,64 @@ background-color: blue;
     white-space: nowrap;
     position: relative;
     bottom: -370px;
+    cursor: pointer;
 }
 
 .wild_party_theme {
     background:linear-gradient(rgb(6, 89, 145), rgb(28, 83, 155), rgb(153, 21, 153), rgb(58, 5, 58));
     box-shadow: inset 0 0 40px black;
-    width: 1690px;
-    height: 920px;
+    width: 1920px;
+    height: 1130px;
     border-radius: 32px;
+    border: 2px solid black;
     position: relative;
-    top: -1680px;
+    left: -270px;
+    top: -2060px;
+    z-index: 5;
+}
+
+.wild_crown {
+width: 110px;
+filter: 
+drop-shadow(0 4px 4px white)
+drop-shadow(0 2px 2px white);
+position: relative;
+top: -1090px;
+left: -40px;
+transform:rotate(-20deg);
+}
+
+.crown_header {
+    width: 120px;
+    filter:
+    drop-shadow(0 4px 4px black)
+    drop-shadow(0 6px 6px black);
+    animation: GoofyCrown 4s linear infinite;
+    position: relative;
+    top: -1980px;
+    right: -90px;
+    z-index: 6;
+}
+
+@keyframes GoofyCrown {
+    from {
+        transform:rotate(180deg) translateX(60px);
+    }
+    to {
+        transform:rotate(180deg) translateX(60deg);
+    }
 }
 
 .wild_header {
-    color: white;
+    color: gold;
+    font-family: 'Fluffy Bubbles', cursive;
+    text-shadow: 2px 2px white;
+    letter-spacing: 4px;
     font-size: 65px;
     font-weight: bold;
     position: relative;
-    left: -520px;
+    left: -530px;
+    bottom: -20px;
 }
 
 .wild_container {
@@ -1640,7 +1825,7 @@ background-color: blue;
     border: 4px solid black;
     position: relative;
     top: -750px;
-    right: -1180px;
+    right: -1380px;
 }
 
 .wild_overview_header {
@@ -1655,19 +1840,135 @@ background-color: blue;
     position: relative;
     bottom: -50px;
 }
+
+.equip_inv {
+    background:linear-gradient(rgb(63, 62, 62), rgb(70, 66, 66), rgb(114, 111, 111));
+    box-shadow: inset 0 0 20px black;
+    width: 390px;
+    padding: 40px;
+    border-radius: 32px;
+    border: 4px solid white;
+    color: white;
+    font-size: 25px;
+    position: relative;
+    left: -820px;
+    bottom: -350px;
+    cursor: pointer;
+}
+
+.god_inventory {
+    background:linear-gradient(rgb(27, 35, 112), rgb(26, 26, 133), rgb(21, 33, 138), blue);
+    box-shadow: inset 0 0 40px black;
+    width: 850px;
+    height: 950px;
+    border-radius: 22px;
+    border: 4px solid gold;
+    position: relative;
+    right: -320px;
+    top: -3010px;
+    z-index: 6;
+}
+
+.godly_title {
+    color: white;
+    font-size: 41px;
+    font-weight: normal;
+    position: relative;
+    bottom: -220px;
+    left: -190px;
+}
+
+.main_godly_selector {
+    background-color: transparent;
+    width: 750px;
+    height: 570px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+    bottom: -250px;
+}
+
+.godly_selection_1 {
+    background-color: black;
+    width: 210px;
+    height: 290px;
+    border-radius: 22px;
+    border: 4px solid gray;
+    position: relative;
+    right: -80px;
+    bottom: -40px;
+}
+
+.godly_selection_2 {
+    background-color: black;
+    width: 210px;
+    height: 290px;
+    border-radius: 22px;
+    border: 4px solid gray;
+    position: relative;
+    right: -310px;
+    top: -250px;
+}
+
+.godly_selection_3 {
+    background-color: black;
+    width: 210px;
+    height: 290px;
+    border-radius: 22px;
+    border: 4px solid gray;
+    position: relative;
+    right: -540px;
+    top: -540px;
+}
+
+.godly_selection_4 {
+    background-color: black;
+    width: 210px;
+    height: 290px;
+    border-radius: 22px;
+    border: 4px solid gray;
+    position: relative;
+    right: -770px;
+    top: -830px;
+}
+
+.inv_guideline {
+    font-family: 'Happy Monkey', cursive;
+    color: gold;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: -70px;
+}
+
+
+.ready_wild {
+    background-color: red;
+    width: 350px;
+    padding: 35px;
+    border-radius: 22px;
+    border: 4px solid white;
+    color: white;
+    font-family: 'Fluffy Bubbles', cursive;
+    font-size: 32px;
+    position: relative;
+    left: -170px;
+    bottom: -540px;
+    cursor: pointer;
+}
+
 .team_party {
  background:linear-gradient(to right, cyan, cyan, crimson, crimson);
 box-shadow: inset 0 0 30px black;
-    width: 570px;
-    height: 690px;
+    width: 583px;
+    height: 699px;
     border-radius: 32px;
-    border: 6px solid white;
+    border: 4px solid white;
     color: white;
     font-size: 46px;
     font-weight:bold;
     position: relative;
     right: -1320px;
-    top: -1121px;
+    top: -1128px;
     cursor: pointer;
 }
 
@@ -1680,7 +1981,7 @@ box-shadow: inset 0 0 30px black;
 }
 
 .user_1 {
-    background:linear-gradient(blue);
+    background-color: blue;
     width: 145px;
     -webkit-background-clip: text;
     background-clip: text;
@@ -1702,7 +2003,7 @@ box-shadow: inset 0 0 30px black;
     font-family: 'Fuzzy Bubbles', cursive;
     font-size: 65px;
     position: relative;
-    top: -4680px;
+    top: -1480px;
 }
 
 .team_introduction {
@@ -1710,9 +2011,29 @@ box-shadow: inset 0 0 30px black;
     font-size: 25px;
     text-shadow: none;
     position: relative;
-    top: -4590px;
+    z-index: 4;
+    top: -1390px;
 }
 
+.blue_user {
+    width: 150px;
+    filter: 
+    drop-shadow(0 4px 4px black)
+    drop-shadow(0 4px 4px black);
+    position: relative;
+    top: -2550px;
+    right: -40px;
+}
+
+.red_user {
+    width: 150px;
+    filter: 
+    drop-shadow(0 4px 4px black)
+    drop-shadow(0 4px 4px black);
+    position: relative;
+    top: -4150px;
+    right: -410px;
+}
 .team_party_button {
     background:linear-gradient(rgb(35, 138, 207),rgb(71, 183, 228), rgb(70, 162, 190), rgb(52, 181, 233), rgb(31, 102, 124));
     box-shadow: inset 0 0 30px black;
@@ -1723,12 +2044,14 @@ box-shadow: inset 0 0 30px black;
     font-size: 35px;
     cursor: pointer;
     position: relative;
-    top: -4480px;
+    top: -1280px;
 }
 
 .choose_map {
     color: white;
-    font-size: 47px;
+    font-size: 67px;
+    font-family: 'Fluffy Bubbles', cursive;
+    text-shadow: 2px 2px blue;
     font-weight: normal;
 }
 
@@ -1754,14 +2077,14 @@ box-shadow: inset 0 0 30px black;
 
 .map_interface_selection {
     background:linear-gradient(gray, black, rgb(48, 46, 46));
-    width: 1040px;
-    height: 710px;
+    width: 1090px;
+    height: 770px;
     padding: 60px;
     border: 3px solid white;
     border-radius: 22px;
     position: relative;
-    right: -50px;
-    top: -820px;
+    right: -40px;
+    top: -860px;
     overflow-y: hidden;
     overflow-x: auto;
 
