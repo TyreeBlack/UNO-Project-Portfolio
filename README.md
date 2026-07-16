@@ -27,3 +27,10 @@ Security Hardening (Q3 2026)Multi-Factor Authentication (MFA): Integration of Ti
 
 Session Token Protection: Implementation of strict HTTP-only cookie parameters and cross-site request forgery (CSRF) protection mechanisms across the front-end login gateway.
 
+
+## EXTRA DETAILS
+
+---
+
+Configuration files are posted in a private repo for security purposes, this portfolio is simply designed to showcase the project itself.
+
